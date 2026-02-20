@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Consulting Services | NovaMind AI – Digital Infrastructure & AI Automation</title>
+  <meta name="description" content="NovaMind AI builds digital infrastructure and AI automation for service businesses. Websites, automation systems, and AI chatbots that increase revenue and reduce manual work." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMobileMenu()">✕</span>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
+    <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  </nav>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="zap"></i></div>
+        Nova<span>Mind AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
+      <div class="hamburger" onclick="openMobileMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Digital Infrastructure & AI Automation
+        </div>
+        <h1 class="hero-title">
+          Turn Your Service Business Into a<br />
+          <span class="gradient-text">Smart, Automated</span><br />
+          Growth Machine.
+        </h1>
+        <p class="hero-desc">
+          We design modern websites, integrate payments, automate operations, and implement
+          AI-powered systems that increase revenue and reduce manual workload.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
+            Get Free Consultation <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
+          <button class="btn btn-ghost" data-open-wizard>
+            <i data-lucide="clipboard-list"></i> Get a Quote
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num"><span>60%</span></div>
+            <div class="stat-label">Less manual work</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span>2×</span></div>
+            <div class="stat-label">Faster payments</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span>24/7</span></div>
+            <div class="stat-label">Automated service</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="hero-visual">
+        <div class="hero-card-float">
+          <i data-lucide="trending-up"></i>
+          Revenue up 20%
+        </div>
+        <div class="hero-card-main">
+          <div class="card-header">
+            <div class="card-avatar"><i data-lucide="bot"></i></div>
+            <div class="card-header-text">
+              <div class="name">Nova · AI Assistant</div>
+              <div class="role">Your Automation Advisor</div>
+            </div>
+          </div>
+          <div class="ai-response">
+            Analyzing your workflows… I've identified <strong style="color:var(--accent)">3 automation opportunities</strong> that could cut operational costs by up to 42%.
+          </div>
+          <div class="typing-dots"><span></span><span></span><span></span></div>
+          <div class="metrics-row" style="margin-top:20px">
+            <div class="metric-chip">
+              <div class="metric-val">-2 hrs</div>
+              <div class="metric-label">Daily phone calls</div>
+            </div>
+            <div class="metric-chip">
+              <div class="metric-val">-40%</div>
+              <div class="metric-label">No-shows</div>
+            </div>
+            <div class="metric-chip">
+              <div class="metric-val">60%</div>
+              <div class="metric-label">Auto-handled</div>
+            </div>
+            <div class="metric-chip">
+              <div class="metric-val">2×</div>
+              <div class="metric-label">Faster invoicing</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card-float" style="bottom:30px;left:-40px">
+          <i data-lucide="shield-check"></i>
+          Systems Live
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">What We Build</div>
+        <h2 class="section-title">Three Packages to <span>Transform Your Business</span></h2>
+        <p class="section-subtitle">From a high-converting website to a fully automated operation — we do it all.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="monitor"></i></div>
+          <h3>Smart Website Development</h3>
+          <p>Revenue-generating websites built for service businesses — with payments, booking, and automation baked in from day one.</p>
+          <ul class="service-list">
+            <li>Up to 5-page responsive website</li>
+            <li>Booking & payment integration</li>
+            <li>Automated email confirmations</li>
+            <li>Basic SEO + Google Analytics</li>
+          </ul>
+          <div style="margin-top:24px;font-weight:700;color:var(--accent);font-size:0.9rem">Starting at $2,500</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="cpu"></i></div>
+          <h3>Business Automation Systems</h3>
+          <p>End your reliance on manual tasks. We automate your operations so your business runs efficiently whether you're there or not.</p>
+          <ul class="service-list">
+            <li>Workflow & CRM automation</li>
+            <li>3 automated email sequences</li>
+            <li>Payment & invoice automation</li>
+            <li>Performance dashboard + alerts</li>
+          </ul>
+          <div style="margin-top:24px;font-weight:700;color:var(--accent);font-size:0.9rem">Starting at $3,500</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="layers"></i></div>
+          <h3>Full Digital Infrastructure</h3>
+          <p>Our all-in-one solution. Smart website + automation + AI chatbot + payments + CRM + 5 automated flows + 30-day support.</p>
+          <ul class="service-list">
+            <li>Everything in both packages</li>
+            <li>AI chatbot integration</li>
+            <li>5 custom automated flows</li>
+            <li>30-day optimization support</li>
+          </ul>
+          <div style="margin-top:24px;font-weight:700;color:var(--accent);font-size:0.9rem">Starting at $6,500</div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:48px">
+        <a href="services.html" class="btn btn-outline">View Full Service Details <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AUTOMATION EXAMPLES ===================== -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Real-World Impact</div>
+        <h2 class="section-title">How Automation <span>Saves Your Business Time</span></h2>
+        <p class="section-subtitle">Real examples from the industries we serve — showing exactly how automation reduces manual work and increases revenue.</p>
+      </div>
+      <div class="automation-grid">
+        <div class="automation-card reveal">
+          <div class="auto-icon"><i data-lucide="utensils"></i></div>
+          <div class="auto-content">
+            <h3>Restaurant — Booking Automation</h3>
+            <p>Automated booking confirmations, reminders 24hrs before, and cancellation follow-ups — all handled without picking up the phone.</p>
+            <div class="auto-saving"><i data-lucide="clock"></i> Saves 2 hrs/day on phone calls & follow-ups</div>
+          </div>
+        </div>
+        <div class="automation-card reveal">
+          <div class="auto-icon"><i data-lucide="scissors"></i></div>
+          <div class="auto-content">
+            <h3>Salon & Clinic — AI Scheduling</h3>
+            <p>AI-powered booking with smart reminders eliminates no-shows. Clients reschedule via automated SMS — no staff involvement needed.</p>
+            <div class="auto-saving"><i data-lucide="trending-down"></i> Reduces no-shows by 40%, recovering thousands monthly</div>
+          </div>
+        </div>
+        <div class="automation-card reveal">
+          <div class="auto-icon"><i data-lucide="hard-hat"></i></div>
+          <div class="auto-content">
+            <h3>Contractor — Invoice & Payment Automation</h3>
+            <p>Auto-generated invoices after job completion, automatic payment reminders every 3 days, and Stripe integration for instant online payment.</p>
+            <div class="auto-saving"><i data-lucide="zap"></i> Gets paid 2× faster with zero manual chasing</div>
+          </div>
+        </div>
+        <div class="automation-card reveal">
+          <div class="auto-icon"><i data-lucide="mail"></i></div>
+          <div class="auto-content">
+            <h3>Any Business — Lead Nurturing Sequences</h3>
+            <p>Automated email & SMS sequences warm up leads after enquiry, follow up with existing clients, and re-engage dormant contacts — all on autopilot.</p>
+            <div class="auto-saving"><i data-lucide="clock"></i> Saves 3+ hrs/week on manual follow-ups</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="section process-section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">From Consultation to <span>Automated Growth</span></h2>
+        <p class="section-subtitle">A proven 4-step process to build, launch, and scale your digital infrastructure.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Free Consultation</h3>
+          <p>We analyze your business and identify the highest-impact automation opportunities for your industry.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Strategy & System Design</h3>
+          <p>We create a custom digital infrastructure plan with timelines, milestones, and projected ROI.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Implementation</h3>
+          <p>Design, build, integrate, and test your systems. We train your team and ensure everything runs smoothly.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h3>Optimization</h3>
+          <p>Ongoing improvement and scaling — we monitor performance and continuously optimize for better results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INDUSTRIES ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Industries We Serve</div>
+        <h2 class="section-title">Built for <span>Service Businesses</span></h2>
+        <p class="section-subtitle">We specialize in service businesses — every solution is tailored to your industry's specific workflows and challenges.</p>
+      </div>
+      <div class="clients-grid">
+        <div class="client-card reveal" data-industry="restaurant">
+          <div class="client-icon"><i data-lucide="utensils"></i></div>
+          <h3>Restaurants</h3>
+          <p>Online ordering, booking automation, and AI-powered customer engagement.</p>
+        </div>
+        <div class="client-card reveal" data-industry="clinic">
+          <div class="client-icon"><i data-lucide="stethoscope"></i></div>
+          <h3>Clinics</h3>
+          <p>Patient scheduling, automated follow-ups, and compliance-ready data handling.</p>
+        </div>
+        <div class="client-card reveal" data-industry="salon">
+          <div class="client-icon"><i data-lucide="scissors"></i></div>
+          <h3>Salons</h3>
+          <p>Smart booking, no-show reduction, loyalty programs, and automated promotions.</p>
+        </div>
+        <div class="client-card reveal" data-industry="gym">
+          <div class="client-icon"><i data-lucide="dumbbell"></i></div>
+          <h3>Gyms</h3>
+          <p>Membership automation, class booking, recurring billing, and retention flows.</p>
+        </div>
+        <div class="client-card reveal" data-industry="contractor">
+          <div class="client-icon"><i data-lucide="hard-hat"></i></div>
+          <h3>Contractors</h3>
+          <p>Lead capture, quote automation, invoicing, and payment follow-up systems.</p>
+        </div>
+        <div class="client-card reveal" data-industry="professional">
+          <div class="client-icon"><i data-lucide="briefcase"></i></div>
+          <h3>Professional Services</h3>
+          <p>Client onboarding, contract automation, CRM integration, and billing systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY US ===================== -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="reveal">
+          <div class="section-label">Why NovaMind AI</div>
+          <h2 class="section-title">Digital Infrastructure That <span>Actually Works</span></h2>
+          <div class="why-list" style="margin-top:40px">
+            <div class="why-item">
+              <div class="why-icon"><i data-lucide="target"></i></div>
+              <div>
+                <h4>Built Around Your Workflows</h4>
+                <p>We don't sell generic templates. Every system is designed around how your specific business actually operates.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i data-lucide="plug"></i></div>
+              <div>
+                <h4>End-to-End Integration</h4>
+                <p>Website, payments, CRM, booking, and automation all connected — one ecosystem that grows with you.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i data-lucide="bar-chart-2"></i></div>
+              <div>
+                <h4>Measurable ROI</h4>
+                <p>Every recommendation is tied to real business outcomes — time saved, revenue gained, and costs reduced.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i data-lucide="wallet"></i></div>
+              <div>
+                <h4>Transparent Pricing</h4>
+                <p>All services are clearly priced. No hidden fees, no surprise invoices — just honest, fair pricing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal">
+          <div class="big-stat">
+            <div class="num">42%</div>
+            <div class="label">Average operational cost reduction</div>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <div class="val">2 hrs</div>
+              <div class="lbl">Saved per day</div>
+            </div>
+            <div class="mini-stat">
+              <div class="val">-40%</div>
+              <div class="lbl">No-show rate</div>
+            </div>
+            <div class="mini-stat">
+              <div class="val">2×</div>
+              <div class="lbl">Faster payments</div>
+            </div>
+            <div class="mini-stat">
+              <div class="val">60%</div>
+              <div class="lbl">Inquiries automated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASE STUDIES ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Success Stories</div>
+        <h2 class="section-title">Real <span>Results</span> for Real Businesses</h2>
+        <p class="section-subtitle">See how NovaMind AI has helped service businesses cut costs, save time, and grow revenue.</p>
+      </div>
+      <div class="case-studies-grid">
+        <div class="case-card reveal">
+          <div class="case-industry">Restaurant</div>
+          <h3>Automated Booking & Reminders</h3>
+          <p>A busy restaurant replaced manual phone-based bookings with an automated system — confirmations, reminders, and cancellations handled without staff.</p>
+          <div class="case-result">
+            <div class="result-num">2 hrs</div>
+            <div class="result-label">Saved every single day on calls</div>
+          </div>
+        </div>
+        <div class="case-card reveal">
+          <div class="case-industry">Medical Clinic</div>
+          <h3>AI-Powered Patient Scheduling</h3>
+          <p>A clinic deployed AI-based scheduling with automated SMS reminders, dramatically cutting the no-show rate and recovering significant monthly revenue.</p>
+          <div class="case-result">
+            <div class="result-num">-40%</div>
+            <div class="result-label">Reduction in no-shows</div>
+          </div>
+        </div>
+        <div class="case-card reveal">
+          <div class="case-industry">Contractor</div>
+          <h3>Invoice & Payment Automation</h3>
+          <p>A contracting firm automated their entire invoicing and payment follow-up process, eliminating manual chasing and significantly speeding up cash flow.</p>
+          <div class="case-result">
+            <div class="result-num">2×</div>
+            <div class="result-label">Faster payment collection</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Client Testimonials</div>
+        <h2 class="section-title">What Our <span>Clients Say</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"NovaMind AI built us an automated booking system that completely eliminated our phone-call chaos. Our team is less stressed, and clients love the instant confirmations."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JS</div>
+            <div><div class="author-name">Jane S.</div><div class="author-role">Restaurant Owner</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"The automation system paid for itself in the first month. Invoice chasing used to take hours — now it's completely automatic. Cash flow has never been better."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JD</div>
+            <div><div class="author-name">John D.</div><div class="author-role">General Contractor</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"Our no-show rate dropped by 40% in the first month after implementing their AI scheduling system. That alone is worth thousands to our clinic every month."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div><div class="author-name">Dr. Maria R.</div><div class="author-role">Clinic Director</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING PREVIEW ===================== -->
+  <section class="section pricing-preview">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Transparent Pricing</div>
+        <h2 class="section-title">Clear Prices, <span>No Surprises</span></h2>
+        <p class="section-subtitle">Every service is clearly priced. Pick the package that fits your business — or mix and match add-ons.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-type">Smart Website</div>
+          <div class="pricing-price">$2,500<span>+</span></div>
+          <div class="pricing-desc">Modern site with booking, payments & SEO</div>
+          <a href="pricing.html" class="btn btn-outline">See what's included</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="featured-badge">Best Value</div>
+          <div class="pricing-type">Full Digital Infrastructure</div>
+          <div class="pricing-price">$6,500<span>+</span></div>
+          <div class="pricing-desc">Website + Automation + AI Chatbot + CRM</div>
+          <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-type">Business Automation</div>
+          <div class="pricing-price">$3,500<span>+</span></div>
+          <div class="pricing-desc">Workflows, CRM, email sequences & dashboard</div>
+          <a href="pricing.html" class="btn btn-outline">See what's included</a>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:40px">
+        <a href="pricing.html" class="btn btn-accent">View Full Pricing & Add-Ons <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="section cta-section">
+    <div class="cta-bg"></div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label">Get Started Today — It's Free</div>
+        <h2>Ready to Automate Your Business?</h2>
+        <p>Book a free consultation and discover how NovaMind AI can reduce your manual workload and increase your revenue — starting this month.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation <i data-lucide="arrow-right"></i></a>
+          <a href="about.html" class="btn btn-outline">Learn About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i data-lucide="zap"></i></div>
+            Nova<span>Mind AI</span>
+          </a>
+          <p>Digital infrastructure &amp; AI automation for service businesses. Websites, systems, and AI that work while you sleep.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter/X"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Smart Website Development</a></li>
+            <li><a href="services.html">Business Automation</a></li>
+            <li><a href="services.html">Full Digital Infrastructure</a></li>
+            <li><a href="services.html">Monthly Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
+            <li><a href="contact.html">Send a Message</a></li>
+            <li><a href="contact.html">Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 NovaMind AI. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="interactive.js"></script>
+</body>
+</html>

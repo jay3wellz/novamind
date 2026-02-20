@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | NovaMind AI — Transparent Plans for Service Businesses</title>
+  <meta name="description" content="Clear, transparent pricing for smart website development, business automation, full digital infrastructure, and monthly AI support plans." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMobileMenu()">✕</span>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
+    <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  </nav>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="zap"></i></div>
+        Nova<span>Mind AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
+      <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <div class="section-label">Transparent Pricing</div>
+      <h1>Clear Prices, <span style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">No Surprises</span></h1>
+      <p>All services and add-ons are clearly priced. No hidden fees, no vague estimates. Pick what you need — or let us recommend the right fit on a free call.</p>
+    </div>
+  </section>
+
+  <!-- Main Packages -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Core Packages</div>
+        <h2 class="section-title">Choose Your <span>Starting Point</span></h2>
+        <p class="section-subtitle">Three packages designed for service businesses at different stages of growth.</p>
+      </div>
+      <div class="pricing-full-grid">
+
+        <div class="pricing-full-card reveal">
+          <div class="plan-header">
+            <div class="plan-name">Smart Website Development</div>
+            <div class="plan-price">$2,500<sub>+</sub></div>
+            <div class="plan-tagline">For service businesses that need a modern, revenue-generating website with booking and payment integration.</div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Up to 5-page responsive website</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Mobile optimization</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Basic SEO setup</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Contact form</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Booking integration</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Stripe / Square payment setup</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Automated email confirmations</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Google Analytics integration</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-full-card reveal">
+          <div class="plan-header">
+            <div class="plan-name">Business Automation Systems</div>
+            <div class="plan-price">$3,500<sub>+</sub></div>
+            <div class="plan-tagline">For businesses that want to eliminate manual admin and operate efficiently on autopilot.</div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Workflow automation</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>CRM integration</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>3 automated email sequences</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Payment automation</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Performance dashboard</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Staff notification system</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-full-card featured reveal" style="grid-column:1/-1">
+          <div class="featured-badge">Best Value — Everything Included</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+            <div>
+              <div class="plan-header">
+                <div class="plan-name">Full Digital Infrastructure</div>
+                <div class="plan-price">$6,500<sub>+</sub></div>
+                <div class="plan-tagline">Our all-in-one package — website + automation + AI chatbot + CRM + 5 flows + 30-day support. The complete solution.</div>
+              </div>
+            </div>
+            <div>
+              <ul class="plan-features">
+                <li><span class="check-icon"><i data-lucide="check"></i></span>Smart website (everything in Package 1)</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>Full automation system (everything in Package 2)</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>AI chatbot integration</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>Payment integrations</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>CRM full setup</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>Performance dashboard</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>5 custom automated workflows</li>
+                <li><span class="check-icon"><i data-lucide="check"></i></span>30-day optimization support</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)">
+            <a href="contact.html" class="btn btn-primary plan-cta" style="max-width:360px;margin:0 auto">Get the Full Package <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Support -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Ongoing Support</div>
+        <h2 class="section-title">Monthly AI Optimization <span>&amp; Support</span></h2>
+        <p class="section-subtitle">Keep your systems performing at their best with ongoing support, optimization, and strategy.</p>
+      </div>
+      <div class="pricing-full-grid">
+
+        <div class="pricing-full-card reveal">
+          <div class="plan-header">
+            <div class="plan-name">Basic</div>
+            <div class="plan-price">$750<sub>/month</sub></div>
+            <div class="plan-tagline">Essential maintenance and monitoring to keep everything running smoothly.</div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>System maintenance & uptime monitoring</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Minor content and system updates</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Monthly performance report</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Email support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-full-card reveal">
+          <div class="plan-header">
+            <div class="plan-name">Growth</div>
+            <div class="plan-price">$1,500<sub>/month</sub></div>
+            <div class="plan-tagline">Active optimization and strategy to continuously improve your business results.</div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Everything in Basic</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Continuous system optimization</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Monthly strategy call</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Funnel improvements</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Priority email & chat support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-full-card featured reveal" style="grid-column:1/-1">
+          <div class="featured-badge">Maximum Results</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+            <div class="plan-header">
+              <div class="plan-name">Elite</div>
+              <div class="plan-price">$2,500<sub>/month</sub></div>
+              <div class="plan-tagline">Full system management with advanced AI optimization, testing, and revenue forecasting.</div>
+            </div>
+            <ul class="plan-features">
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Everything in Growth</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Full system management</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>A/B testing</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Revenue forecasting</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Conversion optimization</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Dedicated account manager</li>
+            </ul>
+          </div>
+          <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)">
+            <a href="contact.html" class="btn btn-primary plan-cta" style="max-width:360px;margin:0 auto">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Dev -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Custom Work</div>
+        <h2 class="section-title">Need Something <span>Not Listed?</span></h2>
+        <p class="section-subtitle">Custom development outside of our listed packages is available at a clear hourly rate — no surprises.</p>
+      </div>
+      <div style="max-width:600px;margin:40px auto 0;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:40px;text-align:center" class="reveal">
+        <div style="width:64px;height:64px;background:var(--gradient);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:white">
+          <i data-lucide="code-2" style="width:1.8rem;height:1.8rem"></i>
+        </div>
+        <h3 style="color:var(--white);margin-bottom:12px;font-size:1.3rem">Custom Development Rate</h3>
+        <div style="font-size:2.5rem;font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px">$125/hr</div>
+        <p style="margin-bottom:24px">Minimum 10-hour block. For features, integrations, or systems outside our standard packages.</p>
+        <a href="contact.html" class="btn btn-primary">Request a Quote <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Pricing <span>Questions</span></h2>
+      </div>
+      <div style="max-width:780px;margin:60px auto 0;display:flex;flex-direction:column;gap:16px">
+        <div class="service-card reveal" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Is the free consultation really free?</h3>
+          <p style="font-size:0.9rem">Yes, completely free and no-commitment. We analyze your business and show you where automation can save time and increase revenue — with real numbers, not vague promises.</p>
+        </div>
+        <div class="service-card reveal" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Can I add extras to any package?</h3>
+          <p style="font-size:0.9rem">Absolutely. All add-ons listed on the Services page can be added to any core package. The final price is the package price + add-ons — clearly calculated before any work begins.</p>
+        </div>
+        <div class="service-card reveal" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">How long does implementation take?</h3>
+          <p style="font-size:0.9rem">Smart websites typically take 2–4 weeks. Automation systems 3–5 weeks. The full infrastructure package 4–8 weeks. Timeline depends on scope and how quickly you can provide content and approvals.</p>
+        </div>
+        <div class="service-card reveal" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Do I need a monthly plan after my project?</h3>
+          <p style="font-size:0.9rem">Monthly plans are optional but recommended. You keep ownership of everything we build regardless. The monthly plans ensure your systems stay optimized, updated, and continuously improving.</p>
+        </div>
+        <div class="service-card reveal" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">What if my needs don't fit any package?</h3>
+          <p style="font-size:0.9rem">Book a free consultation and we'll build a custom proposal tailored to your exact needs and budget. Custom development is billed at $125/hr with a minimum 10-hour block.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="cta-bg"></div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label">Start Today — It's Free</div>
+        <h2>Not Sure Which Package is Right for You?</h2>
+        <p>Book a free consultation and we'll analyze your business, show you the ROI, and recommend exactly what you need — no commitment required.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation <i data-lucide="arrow-right"></i></a>
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i data-lucide="zap"></i></div>
+            Nova<span>Mind AI</span>
+          </a>
+          <p>Digital infrastructure &amp; AI automation for service businesses. Websites, systems, and AI that work while you sleep.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter/X"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Smart Website Development</a></li>
+            <li><a href="services.html">Business Automation</a></li>
+            <li><a href="services.html">Full Digital Infrastructure</a></li>
+            <li><a href="services.html">Monthly Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
+            <li><a href="contact.html">Send a Message</a></li>
+            <li><a href="contact.html">Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 NovaMind AI. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
