@@ -3,212 +3,296 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing | NovaMind AI — Transparent Plans for Service Businesses</title>
-  <meta name="description" content="Clear, transparent pricing for smart website development, business automation, full digital infrastructure, and monthly AI support plans." />
+  <title>Pricing | NovaMind — Simple, Transparent Plans for Every Business</title>
+  <meta name="description" content="Start free. Upgrade when you're ready. Simple, transparent pricing for NovaMind's growing suite of business products — CRM, invoicing, scheduling, analytics, and more." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
+  <!-- Starfield Background -->
+  <div class="starfield">
+    <div class="starfield-layer starfield-layer-1"></div>
+    <div class="starfield-layer starfield-layer-2"></div>
+    <div class="starfield-layer starfield-layer-3"></div>
+  </div>
 
+  <!-- Scroll Rocket -->
+  <div class="scroll-rocket" id="scrollRocket">
+    <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C12 2 7 8 7 14C7 17 9.24 19.5 12 20C14.76 19.5 17 17 17 14C17 8 12 2 12 2Z" fill="url(#rocketGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+      <circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.9)"/>
+      <path d="M9 20L12 26L15 20" fill="url(#flameGrad)" opacity="0.9"><animate attributeName="d" values="M9 20L12 26L15 20;M9.5 20L12 28L14.5 20;M9 20L12 26L15 20" dur="0.4s" repeatCount="indefinite"/></path>
+      <path d="M10 20L12 24L14 20" fill="rgba(255,255,255,0.4)"><animate attributeName="d" values="M10 20L12 24L14 20;M10.5 20L12 27L13.5 20;M10 20L12 24L14 20" dur="0.3s" repeatCount="indefinite"/></path>
+      <defs>
+        <linearGradient id="rocketGrad" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#888888"/></linearGradient>
+        <linearGradient id="flameGrad" x1="12" y1="20" x2="12" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#888888"/><stop offset="0.5" stop-color="#cccccc"/><stop offset="1" stop-color="#555555" stop-opacity="0"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="rocket-trail" id="rocketTrail"><div class="rocket-trail-inner"></div></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu">
-    <span class="mobile-close" onclick="closeMobileMenu()">✕</span>
+    <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
-    <a href="about.html" onclick="closeMobileMenu()">About</a>
-    <a href="services.html" onclick="closeMobileMenu()">Services</a>
     <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
-    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+    <a href="products.html" onclick="closeMobileMenu()">Products</a>
+    <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
   </nav>
 
+  <!-- Navbar -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="logo-icon"><i data-lucide="zap"></i></div>
-        Nova<span>Mind AI</span>
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        NovaMind
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="pricing.html" class="active">Pricing</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
       </ul>
-      <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
-      <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+      <button class="btn btn-primary nav-cta magnetic" onclick="openSignup()">
+        <span>Start Building</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <div class="hamburger" onclick="openMobileMenu()">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
+  <!-- Page Hero -->
   <section class="page-hero">
-    <div class="container reveal">
-      <div class="section-label">Transparent Pricing</div>
-      <h1>Clear Prices, <span style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">No Surprises</span></h1>
-      <p>All services and add-ons are clearly priced. No hidden fees, no vague estimates. Pick what you need — or let us recommend the right fit on a free call.</p>
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h1>Simple, Transparent <span class="gradient-text">Pricing</span></h1>
+      <p>Start free. Upgrade when you're ready. Every plan includes access to our growing suite of business products.</p>
     </div>
   </section>
 
-  <!-- Main Packages -->
+  <!-- Core Plans -->
   <section class="section">
     <div class="container">
-      <div class="text-center reveal">
-        <div class="section-label">Core Packages</div>
-        <h2 class="section-title">Choose Your <span>Starting Point</span></h2>
-        <p class="section-subtitle">Three packages designed for service businesses at different stages of growth.</p>
+      <div class="text-center">
+        <div class="section-label">Plans</div>
+        <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+        <p class="section-subtitle">From free to fully custom — pick the plan that fits where you are today.</p>
       </div>
       <div class="pricing-full-grid">
 
-        <div class="pricing-full-card reveal">
+        <!-- Free Plan -->
+        <div class="pricing-full-card glass-card">
           <div class="plan-header">
-            <div class="plan-name">Smart Website Development</div>
-            <div class="plan-price">$2,500<sub>+</sub></div>
-            <div class="plan-tagline">For service businesses that need a modern, revenue-generating website with booking and payment integration.</div>
+            <div class="plan-name">Free</div>
+            <div class="plan-price">$0<sub>/month</sub></div>
+            <div class="plan-tagline">Perfect for getting started. Try one product with no commitment.</div>
           </div>
           <ul class="plan-features">
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Up to 5-page responsive website</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Mobile optimization</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Basic SEO setup</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Contact form</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Booking integration</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Stripe / Square payment setup</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Automated email confirmations</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Google Analytics integration</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>1 product included</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Basic dashboard</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Community support</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Product updates</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+          <button class="btn btn-glass plan-cta" onclick="openSignup()"><span>Get Started Free</span></button>
         </div>
 
-        <div class="pricing-full-card reveal">
+        <!-- Start Up Plan -->
+        <div class="pricing-full-card glass-card">
           <div class="plan-header">
-            <div class="plan-name">Business Automation Systems</div>
-            <div class="plan-price">$3,500<sub>+</sub></div>
-            <div class="plan-tagline">For businesses that want to eliminate manual admin and operate efficiently on autopilot.</div>
+            <div class="plan-name">Start Up</div>
+            <div class="plan-price">$29<sub>/month</sub></div>
+            <div class="plan-tagline">For growing businesses that need core tools and AI assistance.</div>
           </div>
           <ul class="plan-features">
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Workflow automation</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>CRM integration</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>3 automated email sequences</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Payment automation</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Performance dashboard</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Staff notification system</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>3 products included</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>AI Business Agent</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Priority email support</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Product updates</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Analytics dashboard</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>$5/mo per additional product</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+          <button class="btn btn-primary plan-cta" onclick="openSignup()"><span>Start Building</span></button>
         </div>
 
-        <div class="pricing-full-card featured reveal" style="grid-column:1/-1">
-          <div class="featured-badge">Best Value — Everything Included</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
-            <div>
-              <div class="plan-header">
-                <div class="plan-name">Full Digital Infrastructure</div>
-                <div class="plan-price">$6,500<sub>+</sub></div>
-                <div class="plan-tagline">Our all-in-one package — website + automation + AI chatbot + CRM + 5 flows + 30-day support. The complete solution.</div>
-              </div>
-            </div>
-            <div>
-              <ul class="plan-features">
-                <li><span class="check-icon"><i data-lucide="check"></i></span>Smart website (everything in Package 1)</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>Full automation system (everything in Package 2)</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>AI chatbot integration</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>Payment integrations</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>CRM full setup</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>Performance dashboard</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>5 custom automated workflows</li>
-                <li><span class="check-icon"><i data-lucide="check"></i></span>30-day optimization support</li>
-              </ul>
-            </div>
+        <!-- Max Plan (Featured) -->
+        <div class="pricing-full-card glass-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="plan-header">
+            <div class="plan-name">Max</div>
+            <div class="plan-price">$79<sub>/month</sub></div>
+            <div class="plan-tagline">For businesses that want maximum power and flexibility.</div>
           </div>
-          <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)">
-            <a href="contact.html" class="btn btn-primary plan-cta" style="max-width:360px;margin:0 auto">Get the Full Package <i data-lucide="arrow-right"></i></a>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>5 products included</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>AI Business Agent</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Priority email &amp; chat support</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Product updates</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Advanced analytics</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Custom integrations</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>$5/mo per additional product</li>
+          </ul>
+          <button class="btn btn-primary btn-glow plan-cta" onclick="openSignup()"><span>Get Max Plan</span></button>
+        </div>
+
+        <!-- Custom Plan -->
+        <div class="pricing-full-card glass-card">
+          <div class="plan-header">
+            <div class="plan-name">Custom</div>
+            <div class="plan-price">Let's Talk</div>
+            <div class="plan-tagline">Enterprise-grade. Tailored to your exact needs.</div>
           </div>
+          <ul class="plan-features">
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Custom product selection</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Dedicated AI agent</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Dedicated account manager</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Custom integrations</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>SLA guarantee</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Volume discounts</li>
+          </ul>
+          <a href="mailto:contact@novamindai.com" class="btn btn-glass plan-cta"><span>Contact Sales</span></a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Monthly Support -->
+  <!-- Add-On Products -->
   <section class="section" style="background:var(--dark-2)">
     <div class="container">
-      <div class="text-center reveal">
-        <div class="section-label">Ongoing Support</div>
-        <h2 class="section-title">Monthly AI Optimization <span>&amp; Support</span></h2>
-        <p class="section-subtitle">Keep your systems performing at their best with ongoing support, optimization, and strategy.</p>
+      <div class="text-center">
+        <div class="section-label">Add-On Products</div>
+        <h2 class="section-title">Expand Your <span class="gradient-text">Toolkit</span></h2>
+        <p class="section-subtitle">Need more than what's in your plan? Add any product for just $5/month.</p>
       </div>
-      <div class="pricing-full-grid">
+      <div class="industries-grid" style="grid-template-columns:repeat(3,1fr)">
 
-        <div class="pricing-full-card reveal">
-          <div class="plan-header">
-            <div class="plan-name">Basic</div>
-            <div class="plan-price">$750<sub>/month</sub></div>
-            <div class="plan-tagline">Essential maintenance and monitoring to keep everything running smoothly.</div>
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="users" style="width:24px;height:24px;color:var(--white)"></i>
           </div>
-          <ul class="plan-features">
-            <li><span class="check-icon"><i data-lucide="check"></i></span>System maintenance & uptime monitoring</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Minor content and system updates</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Monthly performance report</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Email support</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">CRM</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
         </div>
 
-        <div class="pricing-full-card reveal">
-          <div class="plan-header">
-            <div class="plan-name">Growth</div>
-            <div class="plan-price">$1,500<sub>/month</sub></div>
-            <div class="plan-tagline">Active optimization and strategy to continuously improve your business results.</div>
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="file-text" style="width:24px;height:24px;color:var(--white)"></i>
           </div>
-          <ul class="plan-features">
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Everything in Basic</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Continuous system optimization</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Monthly strategy call</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Funnel improvements</li>
-            <li><span class="check-icon"><i data-lucide="check"></i></span>Priority email & chat support</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline plan-cta">Get Started</a>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Invoicing</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
         </div>
 
-        <div class="pricing-full-card featured reveal" style="grid-column:1/-1">
-          <div class="featured-badge">Maximum Results</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
-            <div class="plan-header">
-              <div class="plan-name">Elite</div>
-              <div class="plan-price">$2,500<sub>/month</sub></div>
-              <div class="plan-tagline">Full system management with advanced AI optimization, testing, and revenue forecasting.</div>
-            </div>
-            <ul class="plan-features">
-              <li><span class="check-icon"><i data-lucide="check"></i></span>Everything in Growth</li>
-              <li><span class="check-icon"><i data-lucide="check"></i></span>Full system management</li>
-              <li><span class="check-icon"><i data-lucide="check"></i></span>A/B testing</li>
-              <li><span class="check-icon"><i data-lucide="check"></i></span>Revenue forecasting</li>
-              <li><span class="check-icon"><i data-lucide="check"></i></span>Conversion optimization</li>
-              <li><span class="check-icon"><i data-lucide="check"></i></span>Dedicated account manager</li>
-            </ul>
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="calendar" style="width:24px;height:24px;color:var(--white)"></i>
           </div>
-          <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)">
-            <a href="contact.html" class="btn btn-primary plan-cta" style="max-width:360px;margin:0 auto">Get Started <i data-lucide="arrow-right"></i></a>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Scheduling</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="bar-chart-3" style="width:24px;height:24px;color:var(--white)"></i>
           </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Analytics</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="message-circle" style="width:24px;height:24px;color:var(--white)"></i>
+          </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">AI Chatbot</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="mail" style="width:24px;height:24px;color:var(--white)"></i>
+          </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Email Campaigns</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="globe" style="width:24px;height:24px;color:var(--white)"></i>
+          </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Website Builder</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="clipboard-list" style="width:24px;height:24px;color:var(--white)"></i>
+          </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Project Management</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
+        </div>
+
+        <div class="industry-card glass-card" style="text-align:center;padding:28px 20px">
+          <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:rgba(255,255,255,0.06);border-radius:12px">
+            <i data-lucide="credit-card" style="width:24px;height:24px;color:var(--white)"></i>
+          </div>
+          <div style="color:var(--white);font-weight:600;font-size:0.95rem;margin-bottom:4px">Payments</div>
+          <div style="font-size:0.85rem;opacity:0.6">$5/mo</div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Custom Dev -->
+  <!-- AI Agent Section -->
   <section class="section">
     <div class="container">
-      <div class="text-center reveal">
-        <div class="section-label">Custom Work</div>
-        <h2 class="section-title">Need Something <span>Not Listed?</span></h2>
-        <p class="section-subtitle">Custom development outside of our listed packages is available at a clear hourly rate — no surprises.</p>
-      </div>
-      <div style="max-width:600px;margin:40px auto 0;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:40px;text-align:center" class="reveal">
-        <div style="width:64px;height:64px;background:var(--gradient);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:white">
-          <i data-lucide="code-2" style="width:1.8rem;height:1.8rem"></i>
+      <div class="why-layout">
+        <div>
+          <div class="section-label">AI Business Agent</div>
+          <h2 class="section-title">Your Dedicated AI<br/><span class="gradient-text">That Knows Your Business</span></h2>
+          <p style="margin-bottom:16px">The NovaMind AI Business Agent learns everything about your company — your products, processes, team, and customers. It becomes your always-on team member that never sleeps.</p>
+          <p style="margin-bottom:16px">It helps answer questions, automate decisions, suggest optimizations, and even draft emails and reports. The more you use it, the smarter it gets.</p>
+          <p>Available on <strong style="color:var(--white)">Start Up</strong>, <strong style="color:var(--white)">Max</strong>, and <strong style="color:var(--white)">Custom</strong> plans.</p>
         </div>
-        <h3 style="color:var(--white);margin-bottom:12px;font-size:1.3rem">Custom Development Rate</h3>
-        <div style="font-size:2.5rem;font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px">$125/hr</div>
-        <p style="margin-bottom:24px">Minimum 10-hour block. For features, integrations, or systems outside our standard packages.</p>
-        <a href="contact.html" class="btn btn-primary">Request a Quote <i data-lucide="arrow-right"></i></a>
+        <div>
+          <div class="glass-card" style="padding:40px;text-align:center">
+            <div class="gradient-text" style="font-size:4rem;font-weight:900;line-height:1;margin-bottom:8px">24/7</div>
+            <div style="color:var(--white);font-size:1rem;margin-bottom:32px">AI agent availability</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+              <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:12px">
+                <div style="color:var(--white);font-size:1.5rem;font-weight:800">100%</div>
+                <div style="font-size:0.8rem;opacity:0.6">Business context</div>
+              </div>
+              <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:12px">
+                <div style="color:var(--white);font-size:1.5rem;font-weight:800">&infin;</div>
+                <div style="font-size:0.8rem;opacity:0.6">Questions answered</div>
+              </div>
+              <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:12px">
+                <div style="color:var(--white);font-size:1.5rem;font-weight:800">0</div>
+                <div style="font-size:0.8rem;opacity:0.6">Setup required</div>
+              </div>
+              <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:12px">
+                <div style="color:var(--white);font-size:1.5rem;font-weight:800">Live</div>
+                <div style="font-size:0.8rem;opacity:0.6">Always learning</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -216,95 +300,103 @@
   <!-- FAQ -->
   <section class="section" style="background:var(--dark-2)">
     <div class="container">
-      <div class="text-center reveal">
+      <div class="text-center">
         <div class="section-label">FAQ</div>
-        <h2 class="section-title">Pricing <span>Questions</span></h2>
+        <h2 class="section-title">Pricing <span class="gradient-text">Questions</span></h2>
       </div>
       <div style="max-width:780px;margin:60px auto 0;display:flex;flex-direction:column;gap:16px">
-        <div class="service-card reveal" style="padding:28px">
-          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Is the free consultation really free?</h3>
-          <p style="font-size:0.9rem">Yes, completely free and no-commitment. We analyze your business and show you where automation can save time and increase revenue — with real numbers, not vague promises.</p>
+        <div class="glass-card" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">What's included in the free plan?</h3>
+          <p style="font-size:0.9rem">The free plan gives you access to 1 product of your choice, a basic dashboard, and community support. No credit card required.</p>
         </div>
-        <div class="service-card reveal" style="padding:28px">
-          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Can I add extras to any package?</h3>
-          <p style="font-size:0.9rem">Absolutely. All add-ons listed on the Services page can be added to any core package. The final price is the package price + add-ons — clearly calculated before any work begins.</p>
+        <div class="glass-card" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Can I switch plans anytime?</h3>
+          <p style="font-size:0.9rem">Yes. Upgrade, downgrade, or cancel at any time. Changes take effect on your next billing cycle.</p>
         </div>
-        <div class="service-card reveal" style="padding:28px">
-          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">How long does implementation take?</h3>
-          <p style="font-size:0.9rem">Smart websites typically take 2–4 weeks. Automation systems 3–5 weeks. The full infrastructure package 4–8 weeks. Timeline depends on scope and how quickly you can provide content and approvals.</p>
+        <div class="glass-card" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">How do add-on products work?</h3>
+          <p style="font-size:0.9rem">Any product not included in your plan can be added for $5/month each. You can add or remove products at any time.</p>
         </div>
-        <div class="service-card reveal" style="padding:28px">
-          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Do I need a monthly plan after my project?</h3>
-          <p style="font-size:0.9rem">Monthly plans are optional but recommended. You keep ownership of everything we build regardless. The monthly plans ensure your systems stay optimized, updated, and continuously improving.</p>
+        <div class="glass-card" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">What is the AI Business Agent?</h3>
+          <p style="font-size:0.9rem">It's a dedicated AI assistant included in paid plans that learns your company's data, processes, and customers. It can answer team questions, suggest improvements, draft content, and automate routine decisions.</p>
         </div>
-        <div class="service-card reveal" style="padding:28px">
-          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">What if my needs don't fit any package?</h3>
-          <p style="font-size:0.9rem">Book a free consultation and we'll build a custom proposal tailored to your exact needs and budget. Custom development is billed at $125/hr with a minimum 10-hour block.</p>
+        <div class="glass-card" style="padding:28px">
+          <h3 style="color:var(--white);font-size:1rem;margin-bottom:10px">Do new products cost extra?</h3>
+          <p style="font-size:0.9rem">No. When we release new products, they're automatically available in your account. If it's within your plan's product limit, it's free. Otherwise, it's $5/month to add.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section cta-section">
-    <div class="cta-bg"></div>
+  <section class="section section-cta">
+    <div class="cta-bg-effects">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
     <div class="container">
-      <div class="cta-inner reveal">
-        <div class="section-label">Start Today — It's Free</div>
-        <h2>Not Sure Which Package is Right for You?</h2>
-        <p>Book a free consultation and we'll analyze your business, show you the ROI, and recommend exactly what you need — no commitment required.</p>
+      <div class="cta-content text-center">
+        <div class="section-label">Get Started</div>
+        <h2 class="cta-title">Start Free,<br/>Grow Unlimited</h2>
+        <p class="cta-desc">Create your account in 60 seconds. No credit card required for the free plan.</p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary">Book Free Consultation <i data-lucide="arrow-right"></i></a>
-          <a href="services.html" class="btn btn-outline">Explore Services</a>
+          <button onclick="openSignup()" class="btn btn-primary btn-glow btn-lg magnetic">
+            <span>Create Free Account</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <a href="products.html" class="btn btn-glass btn-lg magnetic"><span>Browse Products</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <div class="logo-icon"><i data-lucide="zap"></i></div>
-            Nova<span>Mind AI</span>
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            NovaMind
           </a>
-          <p>Digital infrastructure &amp; AI automation for service businesses. Websites, systems, and AI that work while you sleep.</p>
+          <p>Business tools that work while you sleep. CRM, invoicing, scheduling, and more — all in one platform.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="social-link" aria-label="Twitter/X"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
             <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4>Platform</h4>
           <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Our Services</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h4>Products</h4>
           <ul class="footer-links">
-            <li><a href="services.html">Smart Website Development</a></li>
-            <li><a href="services.html">Business Automation</a></li>
-            <li><a href="services.html">Full Digital Infrastructure</a></li>
-            <li><a href="services.html">Monthly Support</a></li>
+            <li><a href="products.html">CRM</a></li>
+            <li><a href="products.html">Invoicing</a></li>
+            <li><a href="products.html">AI Chatbot</a></li>
+            <li><a href="products.html">Analytics</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <ul class="footer-links">
             <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
-            <li><a href="contact.html">Send a Message</a></li>
-            <li><a href="contact.html">Free Consultation</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 NovaMind AI. All rights reserved.</span>
+        <span>&copy; 2025 NovaMind. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -314,6 +406,7 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="signup.js"></script>
   <script src="chatbot.js"></script>
 </body>
 </html>
