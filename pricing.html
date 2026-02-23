@@ -47,6 +47,7 @@
   <nav class="mobile-menu" id="mobileMenu">
     <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="industries.html" onclick="closeMobileMenu()">Industries</a>
     <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
     <a href="products.html" onclick="closeMobileMenu()">Products</a>
     <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
@@ -63,10 +64,18 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="industries.html">Industries</a></li>
         <li><a href="pricing.html" class="active">Pricing</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
       </ul>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">EN</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button onclick="setLang('en')">English</button>
+          <button onclick="setLang('fr')">Fran&ccedil;ais</button>
+        </div>
+      </div>
       <button class="btn btn-primary nav-cta magnetic" onclick="openSignup()">
         <span>Start Building</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -408,5 +417,6 @@
   <script src="main.js"></script>
   <script src="signup.js"></script>
   <script src="chatbot.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>

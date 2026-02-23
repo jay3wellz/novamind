@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industries — NovaMind | Intelligence Layer for Every Business</title>
+  <meta name="description" content="NovaMind delivers industry-specific intelligence layers for restaurants, garages, gyms, real estate, law firms, construction, and import/export businesses." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <div class="starfield">
+    <div class="starfield-layer starfield-layer-1"></div>
+    <div class="starfield-layer starfield-layer-2"></div>
+    <div class="starfield-layer starfield-layer-3"></div>
+  </div>
+  <div class="scroll-rocket" id="scrollRocket">
+    <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C12 2 7 8 7 14C7 17 9.24 19.5 12 20C14.76 19.5 17 17 17 14C17 8 12 2 12 2Z" fill="url(#rocketGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+      <circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.9)"/>
+      <path d="M9 20L12 26L15 20" fill="url(#flameGrad)" opacity="0.9"><animate attributeName="d" values="M9 20L12 26L15 20;M9.5 20L12 28L14.5 20;M9 20L12 26L15 20" dur="0.4s" repeatCount="indefinite"/></path>
+      <path d="M10 20L12 24L14 20" fill="rgba(255,255,255,0.4)"><animate attributeName="d" values="M10 20L12 24L14 20;M10.5 20L12 27L13.5 20;M10 20L12 24L14 20" dur="0.3s" repeatCount="indefinite"/></path>
+      <defs>
+        <linearGradient id="rocketGrad" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#888888"/></linearGradient>
+        <linearGradient id="flameGrad" x1="12" y1="20" x2="12" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#888888"/><stop offset="0.5" stop-color="#cccccc"/><stop offset="1" stop-color="#555555" stop-opacity="0"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="rocket-trail" id="rocketTrail"><div class="rocket-trail-inner"></div></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise-overlay"></div>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="industries.html" onclick="closeMobileMenu()">Industries</a>
+    <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+    <a href="products.html" onclick="closeMobileMenu()">Products</a>
+    <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+  </nav>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        NovaMind
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="industries.html" class="active">Industries</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+      </ul>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">EN</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button onclick="setLang('en')">English</button>
+          <button onclick="setLang('fr')">Fran&ccedil;ais</button>
+        </div>
+      </div>
+      <button class="btn btn-primary nav-cta magnetic" onclick="openSignup()">
+        <span>Start Building</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Industries</div>
+      <h1>Intelligence Built for <span class="gradient-text">Your Industry</span></h1>
+      <p>Not replacing your systems. Giving you owner-level control from anywhere.</p>
+    </div>
+  </section>
+
+  <!-- Sticky Filter Bar -->
+  <div class="ind-filter-bar" id="indFilterBar">
+    <div class="ind-filter-inner">
+      <button class="ind-filter-btn active" data-target="garage">Garage</button>
+      <button class="ind-filter-btn" data-target="restaurant">Restaurant</button>
+      <button class="ind-filter-btn" data-target="gym">Gym</button>
+      <button class="ind-filter-btn" data-target="realestate">Real Estate</button>
+      <button class="ind-filter-btn" data-target="lawfirm">Law Firm</button>
+      <button class="ind-filter-btn" data-target="construction">Construction</button>
+      <button class="ind-filter-btn" data-target="importexport">Import / Export</button>
+    </div>
+  </div>
+
+  <!-- ===================== GARAGE ===================== -->
+  <section class="ind-section" id="garage">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="wrench"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Garages</span></h2>
+          <p class="ind-subtitle">AI-powered operational dashboard for high-volume auto repair garages.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your garage management system. Giving you owner-level control.</div>
+      <button class="ind-dash-trigger" onclick="openDash('garage')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+
+      <!-- Angled Dashboard Preview -->
+      <div class="nm-preview-wrap" onclick="openDash('garage')" style="cursor:pointer">
+        <div class="nm-preview" style="--nm-color:#00d4ff">
+          <div class="nm-topbar">
+            <div class="nm-topbar-left"><span class="nm-dot-pulse"></span><span class="nm-sys-label">NOVAMIND INTELLIGENCE</span></div>
+            <div class="nm-topbar-title">GARAGE COMMAND</div>
+            <div class="nm-topbar-right"><span class="nm-business">Demo Auto Service</span></div>
+          </div>
+          <div class="nm-summary">
+            <div class="nm-summary-score">
+              <div class="nm-score-ring-wrap">
+                <svg class="nm-score-ring" viewBox="0 0 200 200">
+                  <circle class="nm-ring-track" cx="100" cy="100" r="85"/>
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="#00d4ff" stroke-width="5" stroke-linecap="square" stroke-dasharray="534" stroke-dashoffset="70" transform="rotate(-90 100 100)"/>
+                </svg>
+                <span class="nm-score-val" style="font-size:0.85rem">87</span>
+              </div>
+              <div class="nm-score-meta">
+                <div class="nm-score-label">PERFORMANCE</div>
+                <div class="nm-status-badge">OPTIMAL</div>
+              </div>
+            </div>
+            <div class="nm-summary-divider"></div>
+            <div class="nm-summary-kpis">
+              <div class="nm-kpi"><div class="nm-kpi-val">3</div><div class="nm-kpi-label">ACTIVE BAYS</div><div class="nm-kpi-bar"><div style="height:100%;width:100%;background:#00d4ff"></div></div></div>
+              <div class="nm-kpi"><div class="nm-kpi-val">24m</div><div class="nm-kpi-label">AVG SERVICE</div><div class="nm-kpi-bar"><div style="height:100%;width:75%;background:#00d4ff"></div></div></div>
+              <div class="nm-kpi"><div class="nm-kpi-val">92%</div><div class="nm-kpi-label">ON-TIME RATE</div><div class="nm-kpi-bar"><div style="height:100%;width:92%;background:#00d4ff"></div></div></div>
+              <div class="nm-kpi"><div class="nm-kpi-val">2</div><div class="nm-kpi-label">PARTS PENDING</div><div class="nm-kpi-bar"><div style="height:100%;width:20%;background:#00d4ff"></div></div></div>
+            </div>
+          </div>
+          <div class="nm-columns">
+            <div class="nm-col">
+              <div class="nm-col-head"><div class="nm-col-head-left"><span class="nm-col-label">SARAH MITCHELL</span><span class="nm-card-status nm-st-queue">IN LINE</span></div><div class="nm-card-timer"><span class="nm-timer-val">8m 22s</span></div></div>
+              <div class="nm-card"><div class="nm-card-title">Toyota RAV4</div><div class="nm-card-meta">2023 XLE &middot; BK7 2M9 <span class="nm-highlight">42,310 KM</span></div><div class="nm-card-fields"><div class="nm-field"><span class="nm-field-key">Service</span><span class="nm-field-val">Synthetic Oil Change</span></div><div class="nm-field"><span class="nm-field-key">Oil Type</span><span class="nm-field-val">0W16-SYN Full Syn. &rarr; 4.5 L</span></div><div class="nm-field"><span class="nm-field-key">Torque</span><span class="nm-field-val">30 Foot-pound</span></div></div></div>
+            </div>
+            <div class="nm-col">
+              <div class="nm-col-head"><div class="nm-col-head-left"><span class="nm-col-label">MARC TREMBLAY</span><span class="nm-card-status nm-st-active">IN PROGRESS</span></div><div class="nm-card-timer"><span class="nm-timer-val">29m 36s</span></div></div>
+              <div class="nm-card"><div class="nm-card-title">Mazda CX-30</div><div class="nm-card-meta">2025 2.5 S &middot; BAM18M <span class="nm-highlight">15,508 KM</span></div><div class="nm-card-fields"><div class="nm-field"><span class="nm-field-key">Service</span><span class="nm-field-val">Oil Change 0W20</span></div><div class="nm-field"><span class="nm-field-key">Oil Type</span><span class="nm-field-val">0W20-SYN Blend &rarr; 4.5 L</span></div><div class="nm-field"><span class="nm-field-key">Torque</span><span class="nm-field-val">23-30 Foot-pound</span></div></div></div>
+            </div>
+            <div class="nm-col">
+              <div class="nm-col-head"><div class="nm-col-head-left"><span class="nm-col-label">DAVID CHEN</span><span class="nm-card-status nm-st-active">IN PROGRESS</span></div><div class="nm-card-timer"><span class="nm-timer-val">0m 31s</span></div></div>
+              <div class="nm-card"><div class="nm-card-title">Cadillac Escalade</div><div class="nm-card-meta">2022 SPORT &middot; 746488 <span class="nm-highlight">123,671 KM</span></div><div class="nm-card-fields"><div class="nm-field"><span class="nm-field-key">Service</span><span class="nm-field-val">Tire Change &amp; Balance 21"</span></div><div class="nm-field"><span class="nm-field-key">Tires</span><span class="nm-field-val">4 Tires &rarr; Torque: 140 ft-lb</span></div></div></div>
+            </div>
+          </div>
+          <div class="nm-alerts-bar">
+            <div class="nm-alerts-head"><span class="nm-alerts-dot"></span><span>ALERTS</span></div>
+            <div class="nm-alerts-list">
+              <div class="nm-alert-item critical"><span class="nm-alert-pip"></span><span class="nm-alert-tag">CRITICAL</span><span>Vehicle #4 exceeding estimate by 40min.</span></div>
+              <div class="nm-alert-item warning"><span class="nm-alert-pip"></span><span class="nm-alert-tag">WARNING</span><span>Bay 3 idle since 2PM.</span></div>
+            </div>
+          </div>
+          <div class="nm-footer">
+            <div class="nm-live"><span class="nm-live-dot"></span> Live Updates <strong>ON</strong></div>
+            <span class="nm-encrypted">SECURE CONNECTION</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Live vehicle tracking with color-coded status indicators</li>
+            <li><span class="check-dot"></span>Real-time service timer with threshold alerts</li>
+            <li><span class="check-dot"></span>Technician performance tracking and ranking</li>
+            <li><span class="check-dot"></span>AI workload prediction & peak-hour forecasting</li>
+            <li><span class="check-dot"></span>Lobby display screen for customer transparency</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Vehicle #4 service time exceeding estimate by 40min.</div>
+            <div class="ind-alert warning">Bay 3 idle — no vehicle assigned since 2PM.</div>
+            <div class="ind-alert critical">Parts delay: brake rotors ETA pushed to tomorrow.</div>
+            <div class="ind-alert warning">Peak-hour incoming — 6 vehicles queued, 2 bays open.</div>
+            <div class="ind-alert warning">Technician B completion rate 22% below average.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Shop-Ware</span>
+          <span class="ind-tag">Mitchell 1</span>
+          <span class="ind-tag">Tekmetric</span>
+          <span class="ind-tag">SMS Automation</span>
+          <span class="ind-tag">Parts Suppliers</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESTAURANT ===================== -->
+  <section class="ind-section" id="restaurant">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="utensils"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Restaurants</span></h2>
+          <p class="ind-subtitle">Remote performance command center for restaurant owners.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your POS or kitchen systems. Giving you owner-level control.</div>
+      <button class="ind-dash-trigger" onclick="openDash('restaurant')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">+$1,240</span><span class="ind-kpi-name">Revenue / Hr</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">29%</span><span class="ind-kpi-name">Labor Cost</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">12 min</span><span class="ind-kpi-name">Avg Ticket Speed</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">2</span><span class="ind-kpi-name">Items at Risk</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Real-time performance score (0-100) with status tracking</li>
+            <li><span class="check-dot"></span>Revenue pace vs baseline — instant momentum read</li>
+            <li><span class="check-dot"></span>Labor efficiency & overstaffing detection by hour</li>
+            <li><span class="check-dot"></span>Inventory run-out prediction for top 20 critical items</li>
+            <li><span class="check-dot"></span>Void/discount anomaly detection & fraud alerts</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Prep time +18% vs normal. Backlog rising.</div>
+            <div class="ind-alert warning">Avg ticket down 9% vs typical Friday.</div>
+            <div class="ind-alert warning">Labor % trending 34% (target 28%).</div>
+            <div class="ind-alert critical">Salmon projected to run out by 7:15 PM.</div>
+            <div class="ind-alert warning">Turnover 15% slower than typical lunch.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Square</span>
+          <span class="ind-tag">Toast</span>
+          <span class="ind-tag">Lightspeed</span>
+          <span class="ind-tag">7shifts</span>
+          <span class="ind-tag">Homebase</span>
+          <span class="ind-tag">OpenTable</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GYM ===================== -->
+  <section class="ind-section" id="gym">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="dumbbell"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Gyms</span></h2>
+          <p class="ind-subtitle">Remote performance command center for gym owners.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your membership system. Giving you owner-level visibility.</div>
+      <button class="ind-dash-trigger" onclick="openDash('gym')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">+12</span><span class="ind-kpi-name">Net Members / Wk</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">8 min</span><span class="ind-kpi-name">Lead Response</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">74%</span><span class="ind-kpi-name">Class Occupancy</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">26%</span><span class="ind-kpi-name">Labor Ratio</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Membership health — net joins minus cancels and freezes</li>
+            <li><span class="check-dot"></span>Lead conversion speed & appointment show-rate tracking</li>
+            <li><span class="check-dot"></span>Class occupancy & peak utilization signals</li>
+            <li><span class="check-dot"></span>Payroll efficiency — labor % vs revenue per staff hour</li>
+            <li><span class="check-dot"></span>Reputation monitoring — reviews & NPS trend alerts</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Lead leak — 42% of new leads not contacted in 15min.</div>
+            <div class="ind-alert critical">Cancellations up 35% vs last 2 weeks.</div>
+            <div class="ind-alert warning">Evening class occupancy down 20% vs baseline.</div>
+            <div class="ind-alert warning">Overstaffed 1-4 PM with low check-ins.</div>
+            <div class="ind-alert critical">1-star review posted. NPS trend dropping.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Mindbody</span>
+          <span class="ind-tag">Glofox</span>
+          <span class="ind-tag">Zen Planner</span>
+          <span class="ind-tag">HubSpot</span>
+          <span class="ind-tag">Google Reviews</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REAL ESTATE ===================== -->
+  <section class="ind-section" id="realestate">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="building"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Real Estate</span></h2>
+          <p class="ind-subtitle">Performance radar for brokers and team leaders.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your CRM. Giving you team-level intelligence.</div>
+      <button class="ind-dash-trigger" onclick="openDash('realestate')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">6 min</span><span class="ind-kpi-name">Avg Response</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$2.4M</span><span class="ind-kpi-name">Pipeline Value</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">18%</span><span class="ind-kpi-name">Close Rate</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$340K</span><span class="ind-kpi-name">30-Day Forecast</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Lead response time tracking & SLA compliance</li>
+            <li><span class="check-dot"></span>Pipeline velocity — stuck-deal detection by stage</li>
+            <li><span class="check-dot"></span>Agent scoreboard — activity-to-outcome conversion</li>
+            <li><span class="check-dot"></span>Lead source quality — close rate by channel</li>
+            <li><span class="check-dot"></span>30-day revenue forecast with cashflow control</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">New leads waiting >10 minutes — response breach.</div>
+            <div class="ind-alert warning">Deals stuck in Negotiation >14 days.</div>
+            <div class="ind-alert warning">Hot leads with no follow-up in 48 hours.</div>
+            <div class="ind-alert critical">Agent contacted only 54% of leads this week.</div>
+            <div class="ind-alert warning">Meta leads appointment rate down 22%.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Follow Up Boss</span>
+          <span class="ind-tag">kvCORE</span>
+          <span class="ind-tag">HubSpot</span>
+          <span class="ind-tag">Salesforce</span>
+          <span class="ind-tag">Google Calendar</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LAW FIRM ===================== -->
+  <section class="ind-section" id="lawfirm">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="scale"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Law Firms</span></h2>
+          <p class="ind-subtitle">Executive oversight for managing partners.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your case management system. Giving partners live visibility.</div>
+      <button class="ind-dash-trigger" onclick="openDash('lawfirm')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">64%</span><span class="ind-kpi-name">Consult Convert</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">82%</span><span class="ind-kpi-name">Billable Capture</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$48K</span><span class="ind-kpi-name">A/R Over 30 Days</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">3</span><span class="ind-kpi-name">Deadlines at Risk</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Intake speed & consultation conversion rate</li>
+            <li><span class="check-dot"></span>Case velocity — cycle time by type, stall detection</li>
+            <li><span class="check-dot"></span>Billable capture — logged vs expected, leakage signals</li>
+            <li><span class="check-dot"></span>Collections health — A/R aging at 30/60/90 days</li>
+            <li><span class="check-dot"></span>Deadline risk — upcoming deadlines missing required steps</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Intake leak — calls unanswered, consult rate dropping.</div>
+            <div class="ind-alert warning">Case type A cycle time +18% vs baseline.</div>
+            <div class="ind-alert critical">Attorney B billable logging down 25% this week.</div>
+            <div class="ind-alert warning">A/R over 30 days rising above baseline.</div>
+            <div class="ind-alert critical">Upcoming deadline with missing required steps.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Clio</span>
+          <span class="ind-tag">MyCase</span>
+          <span class="ind-tag">PracticePanther</span>
+          <span class="ind-tag">QuickBooks</span>
+          <span class="ind-tag">Microsoft 365</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONSTRUCTION ===================== -->
+  <section class="ind-section" id="construction">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="hard-hat"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Construction</span></h2>
+          <p class="ind-subtitle">Owner command center for contractors and GCs.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your project tool. Giving you owner-level command.</div>
+      <button class="ind-dash-trigger" onclick="openDash('construction')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">78%</span><span class="ind-kpi-name">On-Time Milestones</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">71%</span><span class="ind-kpi-name">Crew Utilization</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$1.2M</span><span class="ind-kpi-name">Estimate Pipeline</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$28K</span><span class="ind-kpi-name">Uncollected C/O</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Schedule health — milestones on-time vs baseline</li>
+            <li><span class="check-dot"></span>Crew utilization — productive vs idle/travel time</li>
+            <li><span class="check-dot"></span>Estimate pipeline — quotes sent, follow-up, win rate</li>
+            <li><span class="check-dot"></span>Profit leak signals — budget drift, uncollected change orders</li>
+            <li><span class="check-dot"></span>Materials risk — critical items pending, supplier delays</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Project X milestone late by 2 days.</div>
+            <div class="ind-alert warning">Crew B idle >1.5 hours today.</div>
+            <div class="ind-alert critical">Critical material not confirmed for Friday install.</div>
+            <div class="ind-alert warning">Change orders not approved/collected this week.</div>
+            <div class="ind-alert critical">Quotes sent with no follow-up in 72 hours.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Jobber</span>
+          <span class="ind-tag">Buildertrend</span>
+          <span class="ind-tag">Procore</span>
+          <span class="ind-tag">QuickBooks</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPORT/EXPORT ===================== -->
+  <section class="ind-section" id="importexport">
+    <div class="container">
+      <div class="ind-header">
+        <div class="ind-icon"><i data-lucide="ship"></i></div>
+        <div>
+          <h2>NovaMind for <span class="gradient-text">Import / Export</span></h2>
+          <p class="ind-subtitle">Supply chain radar for import/export operators.</p>
+        </div>
+      </div>
+      <div class="ind-not-replacing">Not replacing your ERP. Giving you supply chain intelligence.</div>
+      <button class="ind-dash-trigger" onclick="openDash('importexport')"><i data-lucide="monitor"></i><span>View Live Dashboard</span></button>
+      <div class="ind-kpis">
+        <div class="ind-kpi-box"><span class="ind-kpi-num">82%</span><span class="ind-kpi-name">On-Time Rate</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">+14%</span><span class="ind-kpi-name">Lead Time Drift</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">3 SKUs</span><span class="ind-kpi-name">Stockout Risk</span></div>
+        <div class="ind-kpi-box"><span class="ind-kpi-num">$410K</span><span class="ind-kpi-name">Value in Transit</span></div>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card glass-card">
+          <h3>What You Get</h3>
+          <ul class="ind-features">
+            <li><span class="check-dot"></span>Shipment health — on-time rate & delay risk tracking</li>
+            <li><span class="check-dot"></span>Lead time drift — supplier/carrier reliability trends</li>
+            <li><span class="check-dot"></span>Stockout risk — inventory coverage days, run-out forecast</li>
+            <li><span class="check-dot"></span>Cash exposure — value in transit + aging inventory</li>
+            <li><span class="check-dot"></span>Compliance risk — missing docs & customs blockers</li>
+          </ul>
+        </div>
+        <div class="ind-card glass-card">
+          <h3>Example Alerts</h3>
+          <div class="ind-alerts">
+            <div class="ind-alert critical">Shipment delayed 6 days — stockout predicted.</div>
+            <div class="ind-alert warning">Supplier A lead time +22% this month.</div>
+            <div class="ind-alert critical">SKU 104 projected to hit zero in 9 days.</div>
+            <div class="ind-alert warning">Missing docs for shipment ID #4182.</div>
+            <div class="ind-alert critical">High-value inventory aging >60 days.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ind-integrations">
+        <span class="ind-integrations-label">Integrates with</span>
+        <div class="ind-integration-tags">
+          <span class="ind-tag">Shopify</span>
+          <span class="ind-tag">ERP / WMS</span>
+          <span class="ind-tag">Carrier Tracking</span>
+          <span class="ind-tag">QuickBooks</span>
+          <span class="ind-tag">Amazon</span>
+        </div>
+      </div>
+      <div class="ind-cta-row">
+        <a href="#" class="btn btn-primary magnetic"><span>Book a Demo</span></a>
+        <a href="how-it-works.html" class="btn btn-glass magnetic"><span>See How It Works</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="section section-cta">
+    <div class="cta-bg-effects">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content text-center">
+        <div class="section-label">Ready?</div>
+        <h2 class="cta-title">See It In Action</h2>
+        <p class="cta-desc">Book a demo and see how NovaMind gives you owner-level control — without replacing a single system.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-glow btn-lg magnetic"><span>Book a Demo</span></a>
+          <a href="products.html" class="btn btn-glass btn-lg magnetic"><span>Browse Products</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NOVAMIND DASHBOARD ===================== -->
+  <div class="nm-overlay" id="nmOverlay">
+    <div class="nm-backdrop" onclick="closeDash()"></div>
+    <div class="nm-dash" id="nmDash">
+      <div class="nm-topbar">
+        <div class="nm-topbar-left">
+          <span class="nm-dot-pulse"></span>
+          <span class="nm-sys-label">NOVAMIND INTELLIGENCE</span>
+        </div>
+        <div class="nm-topbar-title" id="nmTitle"></div>
+        <div class="nm-topbar-right">
+          <span class="nm-business" id="nmBusiness"></span>
+          <button class="nm-close" onclick="closeDash()">
+            <span>ESC</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="nm-summary">
+        <div class="nm-summary-score">
+          <div class="nm-score-ring-wrap">
+            <svg class="nm-score-ring" viewBox="0 0 200 200">
+              <circle class="nm-ring-track" cx="100" cy="100" r="85"/>
+              <circle class="nm-ring-fill" id="nmRingFill" cx="100" cy="100" r="85"/>
+            </svg>
+            <span class="nm-score-val" id="nmScoreVal">0</span>
+          </div>
+          <div class="nm-score-meta">
+            <div class="nm-score-label">PERFORMANCE</div>
+            <div class="nm-status-badge" id="nmStatusBadge">LOADING</div>
+          </div>
+        </div>
+        <div class="nm-summary-divider"></div>
+        <div class="nm-summary-kpis" id="nmKpiStack"></div>
+        <div class="nm-summary-sync">LAST SYNC: <span>2 MIN AGO</span></div>
+      </div>
+
+      <div class="nm-columns" id="nmMain"></div>
+
+      <div class="nm-alerts-bar">
+        <div class="nm-alerts-head">
+          <span class="nm-alerts-dot"></span>
+          <span>ALERTS</span>
+        </div>
+        <div class="nm-alerts-list" id="nmAlertsList"></div>
+      </div>
+
+      <div class="nm-footer">
+        <div class="nm-live"><span class="nm-live-dot"></span> Live Updates <strong>ON</strong></div>
+        <span class="nm-timestamp" id="nmTimestamp"></span>
+        <span class="nm-encrypted">SECURE CONNECTION</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="nm-tip" id="nmTip"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            NovaMind
+          </a>
+          <p>Owner-level intelligence for every industry. Real-time KPIs, alerts, and executive reporting.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul class="footer-links">
+            <li><a href="industries.html#garage">Garage</a></li>
+            <li><a href="industries.html#restaurant">Restaurant</a></li>
+            <li><a href="industries.html#gym">Gym</a></li>
+            <li><a href="industries.html#realestate">Real Estate</a></li>
+            <li><a href="industries.html#lawfirm">Law Firm</a></li>
+            <li><a href="industries.html#construction">Construction</a></li>
+            <li><a href="industries.html#importexport">Import / Export</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 NovaMind. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="signup.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="lang.js"></script>
+
+  <script>
+  // ---- Sticky Filter Bar + Scroll Spy ----
+  (function() {
+    const bar = document.getElementById('indFilterBar');
+    const btns = bar.querySelectorAll('.ind-filter-btn');
+    const sections = document.querySelectorAll('.ind-section');
+
+    const barTop = bar.offsetTop;
+    function checkSticky() {
+      if (window.scrollY >= barTop - 80) {
+        bar.classList.add('stuck');
+      } else {
+        bar.classList.remove('stuck');
+      }
+    }
+    window.addEventListener('scroll', checkSticky, { passive: true });
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        if (!target) return;
+        const offset = 140;
+        const y = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          btns.forEach(b => b.classList.remove('active'));
+          const match = bar.querySelector(`[data-target="${entry.target.id}"]`);
+          if (match) {
+            match.classList.add('active');
+            match.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  })();
+
+  // ---- NovaMind Unified Dashboard ----
+  const SVG_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>';
+  const SVG_USER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  const SVG_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+  const SVG_EDIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
+  const SVG_CANCEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+  const SVG_TIMER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
+  let nmTimerInterval = null;
+  let tipTimeout = null;
+
+  const NM_DATA = {
+    garage: {
+      color: '#00d4ff',
+      name: 'GARAGE COMMAND',
+      business: 'Demo Auto Service',
+      score: 87,
+      status: 'OPTIMAL',
+      statusType: 'online',
+      kpis: [
+        { value: '3', label: 'ACTIVE BAYS', pct: 100 },
+        { value: '24m', label: 'AVG SERVICE', pct: 75 },
+        { value: '92%', label: 'ON-TIME RATE', pct: 92 },
+        { value: '2', label: 'PARTS PENDING', pct: 20 }
+      ],
+      cards: [
+        {
+          label: 'SARAH MITCHELL',
+          title: 'Toyota RAV4',
+          meta: '2023 XLE &middot; BK7 2M9',
+          highlight: '42,310 KM',
+          status: 'IN LINE',
+          statusType: 'queue',
+          timer: 502,
+          fields: [
+            { key: 'Service', val: 'Synthetic Oil Change' },
+            { key: 'Oil Type', val: '0W16-SYN Full Syn. &rarr; 4.5 L' },
+            { key: 'Filter', val: 'LOP-LP4967 &rarr; 1 EA' },
+            { key: 'Torque', val: '30 Foot-pound' }
+          ],
+          history: [
+            { date: 'Jan 15, 2026', desc: 'Synthetic Oil Change &mdash; 0W16-SYN 4.5L' },
+            { date: 'Oct 03, 2025', desc: 'Brake Pad Replacement &mdash; Front Axle' },
+            { date: 'Jun 21, 2025', desc: 'Tire Rotation &amp; Balance &mdash; 4 Tires' }
+          ]
+        },
+        {
+          label: 'MARC TREMBLAY',
+          title: 'Mazda CX-30',
+          meta: '2025 2.5 S &middot; BAM18M',
+          highlight: '15,508 KM',
+          status: 'IN PROGRESS',
+          statusType: 'active',
+          timer: 1776,
+          fields: [
+            { key: 'Service', val: 'Oil Change 0W20' },
+            { key: 'Oil Type', val: '0W20-SYN Blend &rarr; 4.5 L' },
+            { key: 'Filter', val: '57002 Wix Filters &rarr; 1 EA' },
+            { key: 'Torque', val: '23-30 Foot-pound' }
+          ],
+          history: [
+            { date: 'Feb 01, 2026', desc: 'Oil Change &mdash; 0W20-SYN Blend 4.5L' },
+            { date: 'Nov 18, 2025', desc: 'Winter Tire Install &mdash; 4 Tires' }
+          ]
+        },
+        {
+          label: 'DAVID CHEN',
+          title: 'Cadillac Escalade',
+          meta: '2022 SPORT &middot; 746488',
+          highlight: '123,671 KM',
+          status: 'IN PROGRESS',
+          statusType: 'active',
+          timer: 31,
+          fields: [
+            { key: 'Service', val: 'Tire Change &amp; Balance 21/22"' },
+            { key: 'Tires', val: '4 Tires 21" &rarr; Torque: 140 ft-lb' }
+          ],
+          history: [
+            { date: 'Jan 28, 2026', desc: 'Full Synthetic Oil &mdash; 0W20 6.0L' },
+            { date: 'Dec 10, 2025', desc: 'Brake Fluid Flush' },
+            { date: 'Sep 14, 2025', desc: 'Transmission Service &mdash; Full Flush' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'Vehicle #4 service time exceeding estimate by 40min.' },
+        { level: 'warning', text: 'Bay 3 idle — no vehicle assigned since 2PM.' },
+        { level: 'critical', text: 'Parts delay: brake rotors ETA pushed to tomorrow.' }
+      ],
+      tips: { complete: 'Mark service as completed', assign: 'View / reassign technician', history: 'Toggle previous service history', edit: 'Edit service details', cancel: 'Cancel this service' }
+    },
+
+    restaurant: {
+      color: '#ff6b2b',
+      name: 'RESTAURANT INTEL',
+      business: 'Demo Restaurant',
+      score: 82,
+      status: 'ON TRACK',
+      statusType: 'online',
+      kpis: [
+        { value: '+$1,240', label: 'REVENUE / HR', pct: 82 },
+        { value: '29%', label: 'LABOR COST', pct: 71 },
+        { value: '12 min', label: 'AVG TICKET SPEED', pct: 60 },
+        { value: '2', label: 'ITEMS AT RISK', pct: 20 }
+      ],
+      cards: [
+        {
+          label: 'STATION A',
+          title: 'Kitchen Line',
+          meta: 'Grill &amp; Saut&eacute; &middot; 3 Active Orders',
+          highlight: '12m avg',
+          status: 'ON PACE',
+          statusType: 'queue',
+          timer: 720,
+          fields: [
+            { key: 'Load', val: '3 tickets in queue' },
+            { key: 'Cook Time', val: '12 min (target: 10 min)' },
+            { key: 'Top Item', val: 'Grilled Salmon &mdash; 4 pending' },
+            { key: 'Staff', val: '2 cooks on station' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: 'Peak Rush &mdash; 47 tickets, avg 11m' },
+            { date: 'Feb 18, 2026', desc: 'Evening &mdash; 38 tickets, avg 9m' },
+            { date: 'Feb 17, 2026', desc: 'Slow Monday &mdash; 22 tickets, avg 8m' }
+          ]
+        },
+        {
+          label: 'STATION B',
+          title: 'Bar &amp; Beverage',
+          meta: 'Full Bar &middot; 8 Seats Active',
+          highlight: '$84/hr',
+          status: 'BUSY',
+          statusType: 'active',
+          timer: 1440,
+          fields: [
+            { key: 'Revenue', val: '$84/hr (target: $70/hr)' },
+            { key: 'Wait', val: '4 min avg cocktail' },
+            { key: 'Top Seller', val: 'House Margarita &mdash; 12 sold' },
+            { key: 'Staff', val: '1 bartender + 1 barback' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: '$1,680 revenue &mdash; 142 drinks' },
+            { date: 'Feb 18, 2026', desc: '$1,420 revenue &mdash; 118 drinks' },
+            { date: 'Feb 17, 2026', desc: '$890 revenue &mdash; 74 drinks' }
+          ]
+        },
+        {
+          label: 'FLOOR',
+          title: 'Front of House',
+          meta: 'Dining Room &middot; 42/60 Seats',
+          highlight: '70% full',
+          status: 'NORMAL',
+          statusType: 'queue',
+          timer: 2700,
+          fields: [
+            { key: 'Occupancy', val: '42/60 seats (70%)' },
+            { key: 'Avg Ticket', val: '$47.20 (baseline: $52)' },
+            { key: 'Turn Time', val: '48 min avg table turn' },
+            { key: 'Upcoming', val: '6 reservations next hour' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: 'Peak: 58/60 seats, $52 avg ticket' },
+            { date: 'Feb 18, 2026', desc: 'Steady: 44/60, $49 avg ticket' },
+            { date: 'Feb 17, 2026', desc: 'Slow: 28/60, $44 avg ticket' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'Prep time +18% vs normal. Backlog rising.' },
+        { level: 'warning', text: 'Avg ticket down 9% vs typical Friday.' },
+        { level: 'critical', text: 'Salmon projected to run out by 7:15 PM.' }
+      ],
+      tips: { complete: 'Mark station check done', assign: 'View / reassign staff', history: 'View past shift performance', edit: 'Adjust station settings', cancel: 'Flag station issue' }
+    },
+
+    gym: {
+      color: '#00ff88',
+      name: 'GYM COMMAND',
+      business: 'Demo Fitness Club',
+      score: 88,
+      status: 'ON TRACK',
+      statusType: 'online',
+      kpis: [
+        { value: '+12', label: 'NET MEMBERS / WK', pct: 88 },
+        { value: '8 min', label: 'LEAD RESPONSE', pct: 75 },
+        { value: '74%', label: 'CLASS OCCUPANCY', pct: 74 },
+        { value: '26%', label: 'LABOR RATIO', pct: 74 }
+      ],
+      cards: [
+        {
+          label: 'MAIN FLOOR',
+          title: 'Floor Traffic',
+          meta: 'Members Today &middot; Check-in Data',
+          highlight: '142 check-ins',
+          status: 'NORMAL',
+          statusType: 'queue',
+          timer: null,
+          fields: [
+            { key: 'Today', val: '142 check-ins (baseline: 168)' },
+            { key: 'Peak Hour', val: '5&ndash;7 PM projected' },
+            { key: 'On Floor', val: '34 members currently' },
+            { key: 'Staff', val: '3 trainers + 1 front desk' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: '156 check-ins &mdash; peak at 6 PM' },
+            { date: 'Feb 18, 2026', desc: '171 check-ins &mdash; above baseline' },
+            { date: 'Feb 17, 2026', desc: '98 check-ins &mdash; slow Monday' }
+          ]
+        },
+        {
+          label: 'CLASS',
+          title: 'Evening HIIT',
+          meta: 'Starting in 45 min &middot; Jamie Ross',
+          highlight: '22/28 enrolled',
+          status: 'FILLING UP',
+          statusType: 'active',
+          timer: null,
+          fields: [
+            { key: 'Enrolled', val: '22/28 (79%)' },
+            { key: 'Waitlist', val: '3 members' },
+            { key: 'Instructor', val: 'Jamie Ross' },
+            { key: 'Equipment', val: '22 mats + weights prepped' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: 'HIIT &mdash; 26/28 enrolled, 2 no-show' },
+            { date: 'Feb 17, 2026', desc: 'HIIT &mdash; 20/28 enrolled, full attend' },
+            { date: 'Feb 14, 2026', desc: 'HIIT &mdash; 28/28 FULL, 5 waitlist' }
+          ]
+        },
+        {
+          label: 'PIPELINE',
+          title: 'Lead Funnel',
+          meta: 'This Week &middot; New Prospects',
+          highlight: '18 new leads',
+          status: 'NEEDS ATTENTION',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'New Leads', val: '18 this week' },
+            { key: 'Contacted', val: '11 of 18 (61%)' },
+            { key: 'Tours Booked', val: '6 appointments' },
+            { key: 'Converted', val: '2 new members' }
+          ],
+          history: [
+            { date: 'Feb 14, 2026', desc: '22 leads &mdash; 16 contacted, 4 converted' },
+            { date: 'Feb 07, 2026', desc: '15 leads &mdash; 12 contacted, 3 converted' },
+            { date: 'Jan 31, 2026', desc: '19 leads &mdash; 14 contacted, 5 converted' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: '42% of new leads not contacted in 15min.' },
+        { level: 'critical', text: 'Cancellations up 35% vs last 2 weeks.' },
+        { level: 'warning', text: 'Overstaffed 1-4 PM with low check-ins.' }
+      ],
+      tips: { complete: 'Complete check', assign: 'Assign trainer', history: 'View member history', edit: 'Edit details', cancel: 'Flag concern' }
+    },
+
+    realestate: {
+      color: '#a855f7',
+      name: 'REAL ESTATE RADAR',
+      business: 'Demo Realty Group',
+      score: 71,
+      status: 'WATCH',
+      statusType: 'watch',
+      kpis: [
+        { value: '6 min', label: 'AVG RESPONSE', pct: 70 },
+        { value: '$2.4M', label: 'PIPELINE VALUE', pct: 60 },
+        { value: '18%', label: 'CLOSE RATE', pct: 45 },
+        { value: '$340K', label: '30-DAY FORECAST', pct: 68 }
+      ],
+      cards: [
+        {
+          label: 'TOP AGENT',
+          title: 'Jessica Park',
+          meta: 'Senior Agent &middot; 24 Active Leads',
+          highlight: '4 min avg',
+          status: 'PERFORMING',
+          statusType: 'active',
+          timer: null,
+          fields: [
+            { key: 'Leads', val: '24 active this week' },
+            { key: 'Response', val: '4 min avg (SLA: 10 min)' },
+            { key: 'Appointments', val: '8 scheduled this week' },
+            { key: 'Offers', val: '3 pending' }
+          ],
+          history: [
+            { date: 'Feb 14, 2026', desc: '6 closings &mdash; $1.2M total volume' },
+            { date: 'Jan 31, 2026', desc: '4 closings &mdash; $890K total volume' },
+            { date: 'Jan 15, 2026', desc: '5 closings &mdash; $1.05M total volume' }
+          ]
+        },
+        {
+          label: 'AGENT',
+          title: 'Michael Torres',
+          meta: 'Agent &middot; 18 Active Leads',
+          highlight: '12 min avg',
+          status: 'BELOW TARGET',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Leads', val: '18 active this week' },
+            { key: 'Response', val: '12 min avg (SLA: 10 min)' },
+            { key: 'Appointments', val: '3 scheduled this week' },
+            { key: 'Offers', val: '1 pending' }
+          ],
+          history: [
+            { date: 'Feb 14, 2026', desc: '2 closings &mdash; $420K volume' },
+            { date: 'Jan 31, 2026', desc: '1 closing &mdash; $310K volume' },
+            { date: 'Jan 15, 2026', desc: '3 closings &mdash; $680K volume' }
+          ]
+        },
+        {
+          label: 'HOT LISTING',
+          title: '42 Oak Drive',
+          meta: 'Listed at $890,000 &middot; 6 Days',
+          highlight: '14 showings',
+          status: 'HOT',
+          statusType: 'hot',
+          timer: null,
+          fields: [
+            { key: 'Price', val: '$890,000' },
+            { key: 'Days', val: '6 days on market' },
+            { key: 'Showings', val: '14 completed' },
+            { key: 'Offers', val: '2 received, 1 above ask' }
+          ],
+          history: [
+            { date: 'Feb 18, 2026', desc: 'Open house &mdash; 22 visitors' },
+            { date: 'Feb 16, 2026', desc: 'Price adjustment &mdash; $910K to $890K' },
+            { date: 'Feb 14, 2026', desc: 'Listed &mdash; $910,000' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'New leads waiting >10min — response breach.' },
+        { level: 'warning', text: 'Deals stuck in Negotiation >14 days.' },
+        { level: 'critical', text: 'Agent contacted only 54% of leads.' }
+      ],
+      tips: { complete: 'Mark task done', assign: 'Contact info', history: 'View deal history', edit: 'Edit details', cancel: 'Remove lead' }
+    },
+
+    lawfirm: {
+      color: '#8b9cf7',
+      name: 'LEGAL OVERSIGHT',
+      business: 'Demo Law Group',
+      score: 79,
+      status: 'ON TRACK',
+      statusType: 'online',
+      kpis: [
+        { value: '64%', label: 'CONSULT CONVERT', pct: 64 },
+        { value: '82%', label: 'BILLABLE CAPTURE', pct: 82 },
+        { value: '$48K', label: 'A/R OVER 30 DAYS', pct: 35 },
+        { value: '3', label: 'DEADLINES AT RISK', pct: 30 }
+      ],
+      cards: [
+        {
+          label: 'CASE FILE',
+          title: 'Rodriguez v. StateFarm',
+          meta: 'Personal Injury &middot; Discovery Phase',
+          highlight: 'Day 22',
+          status: 'ON TRACK',
+          statusType: 'queue',
+          timer: null,
+          fields: [
+            { key: 'Type', val: 'Personal Injury' },
+            { key: 'Stage', val: 'Discovery &mdash; Day 22' },
+            { key: 'Deadline', val: 'Interrogatories due Mar 5' },
+            { key: 'Attorney', val: 'Sarah Whitfield' }
+          ],
+          history: [
+            { date: 'Jan 29, 2026', desc: 'Filed complaint &mdash; accepted by court' },
+            { date: 'Jan 15, 2026', desc: 'Initial consultation &mdash; retainer signed' },
+            { date: 'Jan 10, 2026', desc: 'Intake call &mdash; qualified lead' }
+          ]
+        },
+        {
+          label: 'ATTORNEY',
+          title: 'Sarah Whitfield',
+          meta: 'Senior Associate &middot; Billable Tracking',
+          highlight: '28.5 hrs',
+          status: 'WATCH',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Billable', val: '28.5 hrs this week (target: 35)' },
+            { key: 'Capture', val: '81% capture rate' },
+            { key: 'Revenue', val: '$8,550 billed' },
+            { key: 'Cases', val: '12 active files' }
+          ],
+          history: [
+            { date: 'Feb 14, 2026', desc: '33.5 hrs billable &mdash; $10,050' },
+            { date: 'Feb 07, 2026', desc: '36 hrs billable &mdash; $10,800' },
+            { date: 'Jan 31, 2026', desc: '29 hrs billable &mdash; $8,700' }
+          ]
+        },
+        {
+          label: 'INTAKE',
+          title: 'Consultation Pipeline',
+          meta: 'This Week &middot; New Inquiries',
+          highlight: '57% rate',
+          status: 'NORMAL',
+          statusType: 'queue',
+          timer: null,
+          fields: [
+            { key: 'Calls', val: '14 new inquiries' },
+            { key: 'Booked', val: '8 consultations' },
+            { key: 'Consult Rate', val: '57%' },
+            { key: 'Retainers', val: '3 signed' }
+          ],
+          history: [
+            { date: 'Feb 14, 2026', desc: '16 calls &mdash; 10 consults, 4 retainers' },
+            { date: 'Feb 07, 2026', desc: '12 calls &mdash; 7 consults, 3 retainers' },
+            { date: 'Jan 31, 2026', desc: '18 calls &mdash; 11 consults, 5 retainers' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'Intake leak — consult rate dropping.' },
+        { level: 'warning', text: 'Case type A cycle time +18% vs baseline.' },
+        { level: 'critical', text: 'Attorney B billable down 25% this week.' }
+      ],
+      tips: { complete: 'Approve step', assign: 'Assign attorney', history: 'View case history', edit: 'Edit case file', cancel: 'Flag risk' }
+    },
+
+    construction: {
+      color: '#f59e0b',
+      name: 'SITE COMMAND',
+      business: 'Demo Construction Co.',
+      score: 73,
+      status: 'WATCH',
+      statusType: 'watch',
+      kpis: [
+        { value: '78%', label: 'ON-TIME MILESTONES', pct: 78 },
+        { value: '71%', label: 'CREW UTILIZATION', pct: 71 },
+        { value: '$1.2M', label: 'ESTIMATE PIPELINE', pct: 55 },
+        { value: '$28K', label: 'UNCOLLECTED C/O', pct: 28 }
+      ],
+      cards: [
+        {
+          label: 'PROJECT',
+          title: 'Riverside Plaza',
+          meta: 'Commercial Build &middot; Foundation &amp; Framing',
+          highlight: 'Due Feb 28',
+          status: 'ON SCHEDULE',
+          statusType: 'queue',
+          timer: null,
+          fields: [
+            { key: 'Phase', val: 'Foundation &amp; Framing' },
+            { key: 'Milestone', val: 'Framing Complete &mdash; Feb 28' },
+            { key: 'Budget', val: '+2.4% variance' },
+            { key: 'Crew', val: 'Alpha team assigned (6 workers)' }
+          ],
+          history: [
+            { date: 'Feb 10, 2026', desc: 'Foundation pour complete &mdash; on schedule' },
+            { date: 'Jan 28, 2026', desc: 'Site prep finished &mdash; 1 day ahead' },
+            { date: 'Jan 15, 2026', desc: 'Permits approved &mdash; ground break' }
+          ]
+        },
+        {
+          label: 'CREW',
+          title: 'Crew Alpha',
+          meta: '6 Workers &middot; Riverside Plaza',
+          highlight: '78% utilized',
+          status: 'ACTIVE',
+          statusType: 'active',
+          timer: null,
+          fields: [
+            { key: 'Utilization', val: '78% productive time' },
+            { key: 'Idle Today', val: '1.2 hrs total' },
+            { key: 'Tasks', val: '4 of 7 completed today' },
+            { key: 'Location', val: 'Riverside Plaza &mdash; Bay 2' }
+          ],
+          history: [
+            { date: 'Feb 19, 2026', desc: '82% utilization &mdash; 6/6 tasks done' },
+            { date: 'Feb 18, 2026', desc: '75% utilization &mdash; rain delay 1.5 hrs' },
+            { date: 'Feb 17, 2026', desc: '88% utilization &mdash; 7/7 tasks done' }
+          ]
+        },
+        {
+          label: 'MATERIALS',
+          title: 'Pending Orders',
+          meta: '4 Orders Pending &middot; Supply Chain',
+          highlight: '1 delayed',
+          status: '1 DELAYED',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Critical', val: 'Steel beams &mdash; ETA Feb 24' },
+            { key: 'Confirmed', val: 'Concrete mix, rebar' },
+            { key: 'Budget Left', val: '$42,300 remaining' },
+            { key: 'Pending', val: '4 open purchase orders' }
+          ],
+          history: [
+            { date: 'Feb 15, 2026', desc: 'Lumber delivery &mdash; received, inspected' },
+            { date: 'Feb 10, 2026', desc: 'Concrete order &mdash; 12 yards delivered' },
+            { date: 'Feb 05, 2026', desc: 'Electrical supplies &mdash; partial delivery' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'Project X milestone late by 2 days.' },
+        { level: 'warning', text: 'Crew B idle >1.5 hours today.' },
+        { level: 'critical', text: 'Material not confirmed for Friday install.' }
+      ],
+      tips: { complete: 'Mark complete', assign: 'Assign crew', history: 'View project history', edit: 'Edit details', cancel: 'Flag issue' }
+    },
+
+    importexport: {
+      color: '#14b8a6',
+      name: 'SUPPLY CHAIN RADAR',
+      business: 'Demo Trade Corp.',
+      score: 68,
+      status: 'WATCH',
+      statusType: 'watch',
+      kpis: [
+        { value: '82%', label: 'ON-TIME RATE', pct: 82 },
+        { value: '+14%', label: 'LEAD TIME DRIFT', pct: 35 },
+        { value: '3 SKUs', label: 'STOCKOUT RISK', pct: 30 },
+        { value: '$410K', label: 'VALUE IN TRANSIT', pct: 65 }
+      ],
+      cards: [
+        {
+          label: 'SHIPMENT',
+          title: 'CNT-4182',
+          meta: 'Shanghai &rarr; Vancouver &middot; In Transit',
+          highlight: '+6 days delay',
+          status: 'DELAYED',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Route', val: 'Shanghai &rarr; Vancouver' },
+            { key: 'ETA', val: 'Feb 26, 2026 (original: Feb 20)' },
+            { key: 'Delay', val: '+6 days &mdash; port congestion' },
+            { key: 'Value', val: '$186,000 cargo value' }
+          ],
+          history: [
+            { date: 'Feb 08, 2026', desc: 'Departed Shanghai &mdash; customs cleared' },
+            { date: 'Feb 05, 2026', desc: 'Loaded at port &mdash; container sealed' },
+            { date: 'Feb 01, 2026', desc: 'Order confirmed &mdash; docs submitted' }
+          ]
+        },
+        {
+          label: 'INVENTORY',
+          title: 'SKU-104 Wireless Earbuds',
+          meta: 'Stock Level Alert &middot; 340 units',
+          highlight: '9 days left',
+          status: 'LOW STOCK',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Stock', val: '340 units remaining' },
+            { key: 'Coverage', val: '9 days at current rate' },
+            { key: 'Reorder', val: '2,000 units pending arrival' },
+            { key: 'Burn Rate', val: '38 units/day avg' }
+          ],
+          history: [
+            { date: 'Feb 15, 2026', desc: 'Restocked 1,500 units from CNT-4170' },
+            { date: 'Jan 28, 2026', desc: 'Low stock alert triggered at 400 units' },
+            { date: 'Jan 10, 2026', desc: 'Restocked 2,000 units from CNT-4155' }
+          ]
+        },
+        {
+          label: 'COMPLIANCE',
+          title: 'Customs Clearance',
+          meta: 'CNT-4189 &middot; Docs Required',
+          highlight: 'Due Feb 22',
+          status: 'DOCS NEEDED',
+          statusType: 'warn',
+          timer: null,
+          fields: [
+            { key: 'Missing', val: 'Certificate of Origin' },
+            { key: 'Deadline', val: 'Feb 22, 2026' },
+            { key: 'Value', val: '$124,000 shipment' },
+            { key: 'Risk', val: 'Customs hold if not resolved' }
+          ],
+          history: [
+            { date: 'Feb 12, 2026', desc: 'CNT-4175 cleared &mdash; all docs submitted' },
+            { date: 'Feb 01, 2026', desc: 'CNT-4168 held 3 days &mdash; missing invoice' },
+            { date: 'Jan 20, 2026', desc: 'CNT-4160 cleared &mdash; no issues' }
+          ]
+        }
+      ],
+      alerts: [
+        { level: 'critical', text: 'Shipment delayed 6 days — stockout predicted.' },
+        { level: 'warning', text: 'Supplier A lead time +22% this month.' },
+        { level: 'critical', text: 'SKU 104 projected to hit zero in 9 days.' }
+      ],
+      tips: { complete: 'Confirm received', assign: 'Contact supplier', history: 'View shipment history', edit: 'Edit details', cancel: 'Flag delay' }
+    }
+  };
+
+  function fmtTime(s) {
+    var m = Math.floor(s / 60);
+    var sec = s % 60;
+    return m + 'm ' + (sec < 10 ? '0' : '') + sec + 's';
+  }
+
+  function openDash(industry) {
+    var d = NM_DATA[industry];
+    if (!d) return;
+
+    var overlay = document.getElementById('nmOverlay');
+    var dash = document.getElementById('nmDash');
+
+    dash.style.setProperty('--nm-color', d.color);
+    document.getElementById('nmTitle').textContent = d.name;
+    document.getElementById('nmBusiness').textContent = d.business;
+
+    var badge = document.getElementById('nmStatusBadge');
+    badge.textContent = d.status;
+    badge.className = 'nm-status-badge ' + d.statusType;
+
+    var now = new Date();
+    document.getElementById('nmTimestamp').textContent =
+      now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+    // KPIs
+    var kpiStack = document.getElementById('nmKpiStack');
+    kpiStack.innerHTML = d.kpis.map(function(k) {
+      return '<div class="nm-kpi"><div class="nm-kpi-val">' + k.value + '</div><div class="nm-kpi-label">' + k.label + '</div><div class="nm-kpi-bar"><div class="nm-kpi-bar-fill" style="--bar-pct:' + k.pct + '%"></div></div></div>';
+    }).join('');
+
+    // Cards
+    var main = document.getElementById('nmMain');
+    main.innerHTML = d.cards.map(function(c, i) {
+      var timerHtml = '';
+      if (c.timer != null) {
+        timerHtml = '<div class="nm-card-timer">' + SVG_TIMER + ' <span class="nm-timer-val" data-start="' + c.timer + '">' + fmtTime(c.timer) + '</span></div>';
+      }
+      var fieldsHtml = c.fields.map(function(f) {
+        return '<div class="nm-field"><span class="nm-field-key">' + f.key + '</span><span class="nm-field-val">' + f.val + '</span></div>';
+      }).join('');
+      var historyHtml = c.history.map(function(h) {
+        return '<div class="nm-hist-entry"><span class="nm-hist-date">' + h.date + '</span><span class="nm-hist-desc">' + h.desc + '</span></div>';
+      }).join('');
+
+      return '<div class="nm-col">' +
+        '<div class="nm-col-head">' +
+          '<div class="nm-col-head-left">' +
+            '<span class="nm-col-label">' + c.label + '</span>' +
+            '<span class="nm-card-status nm-st-' + c.statusType + '">' + c.status + '</span>' +
+          '</div>' +
+          timerHtml +
+        '</div>' +
+        '<div class="nm-card">' +
+          '<div class="nm-card-title">' + c.title + '</div>' +
+          '<div class="nm-card-meta">' + c.meta + ' <span class="nm-highlight">' + c.highlight + '</span></div>' +
+          '<div class="nm-card-fields" id="nmFields' + i + '">' + fieldsHtml + '</div>' +
+          '<div class="nm-card-history" id="nmHistory' + i + '" style="display:none">' + historyHtml + '</div>' +
+          '<div class="nm-card-acts">' +
+            '<button class="nm-act nm-act-ok" onclick="showTip(this)" data-tip="' + d.tips.complete + '">' + SVG_CHECK + '</button>' +
+            '<button class="nm-act" onclick="showTip(this)" data-tip="' + d.tips.assign + '">' + SVG_USER + '</button>' +
+            '<button class="nm-act" onclick="toggleHistory(' + i + ');showTip(this)" data-tip="' + d.tips.history + '">' + SVG_CLOCK + '</button>' +
+            '<button class="nm-act" onclick="showTip(this)" data-tip="' + d.tips.edit + '">' + SVG_EDIT + '</button>' +
+            '<button class="nm-act nm-act-danger" onclick="showTip(this)" data-tip="' + d.tips.cancel + '">' + SVG_CANCEL + '</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    // Alerts
+    var alertsList = document.getElementById('nmAlertsList');
+    alertsList.innerHTML = d.alerts.map(function(a) {
+      return '<div class="nm-alert-item ' + a.level + '">' +
+        '<span class="nm-alert-pip"></span>' +
+        '<span class="nm-alert-tag">' + a.level.toUpperCase() + '</span>' +
+        '<span>' + a.text + '</span>' +
+      '</div>';
+    }).join('');
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Animate score ring
+    var circumference = 2 * Math.PI * 85;
+    var ringFill = document.getElementById('nmRingFill');
+    var scoreEl = document.getElementById('nmScoreVal');
+    ringFill.style.strokeDasharray = circumference;
+    ringFill.style.strokeDashoffset = circumference;
+
+    setTimeout(function() {
+      var targetOffset = circumference * (1 - d.score / 100);
+      ringFill.style.transition = 'stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      ringFill.style.strokeDashoffset = targetOffset;
+
+      var current = 0;
+      var step = d.score / 40;
+      var counter = setInterval(function() {
+        current += step;
+        if (current >= d.score) { current = d.score; clearInterval(counter); }
+        scoreEl.textContent = Math.round(current);
+      }, 30);
+    }, 300);
+
+    // Start timers if any cards have them
+    startTimers();
+  }
+
+  function closeDash() {
+    var overlay = document.getElementById('nmOverlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+
+    var ringFill = document.getElementById('nmRingFill');
+    ringFill.style.transition = 'none';
+    ringFill.style.strokeDashoffset = 2 * Math.PI * 85;
+
+    if (nmTimerInterval) { clearInterval(nmTimerInterval); nmTimerInterval = null; }
+
+    var tip = document.getElementById('nmTip');
+    tip.classList.remove('visible');
+  }
+
+  function startTimers() {
+    if (nmTimerInterval) clearInterval(nmTimerInterval);
+    var timers = document.querySelectorAll('#nmMain .nm-timer-val');
+    if (timers.length === 0) return;
+    nmTimerInterval = setInterval(function() {
+      timers.forEach(function(el) {
+        var s = parseInt(el.dataset.start, 10) + 1;
+        el.dataset.start = s;
+        el.textContent = fmtTime(s);
+      });
+    }, 1000);
+  }
+
+  function toggleHistory(index) {
+    var fields = document.getElementById('nmFields' + index);
+    var history = document.getElementById('nmHistory' + index);
+    if (!fields || !history) return;
+    if (history.style.display === 'none') {
+      fields.style.display = 'none';
+      history.style.display = '';
+    } else {
+      history.style.display = 'none';
+      fields.style.display = '';
+    }
+  }
+
+  function showTip(el) {
+    var tip = document.getElementById('nmTip');
+    var text = el.getAttribute('data-tip');
+    if (!text) return;
+    tip.textContent = text;
+    tip.classList.add('visible');
+    var rect = el.getBoundingClientRect();
+    tip.style.left = (rect.left + rect.width / 2) + 'px';
+    tip.style.top = (rect.top - 6) + 'px';
+    clearTimeout(tipTimeout);
+    tipTimeout = setTimeout(function() { tip.classList.remove('visible'); }, 2000);
+  }
+
+  // Close on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDash();
+  });
+
+  // Close tooltip on click outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nm-act')) {
+      var tip = document.getElementById('nmTip');
+      tip.classList.remove('visible');
+    }
+  });
+  </script>
+</body>
+</html>
