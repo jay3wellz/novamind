@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaMind — Client Onboarding &amp; Delivery System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 60px 48px; }
+    .page-break { page-break-after: always; }
+    h1 { font-size: 2.4rem; font-weight: 800; color: #0a1628; margin-bottom: 8px; letter-spacing: -0.02em; }
+    h2 { font-size: 1.6rem; font-weight: 700; color: #0a1628; margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+    h3 { font-size: 1.15rem; font-weight: 600; color: #0a1628; margin: 24px 0 8px; }
+    h4 { font-size: 0.95rem; font-weight: 600; color: #3b82f6; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    p { margin-bottom: 12px; font-size: 0.95rem; color: #374151; }
+    ul, ol { margin: 0 0 16px 24px; }
+    li { margin-bottom: 6px; font-size: 0.92rem; color: #374151; }
+    .subtitle { font-size: 1.1rem; color: #6b7280; margin-bottom: 32px; }
+    .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #3b82f6; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); padding: 4px 14px; border-radius: 50px; margin-bottom: 16px; }
+    .phase-box { background: #f7f8fa; border-radius: 8px; padding: 24px; margin: 16px 0; border-left: 3px solid #3b82f6; }
+    .phase-box h3 { margin-top: 0; }
+    .table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .table th, .table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.88rem; }
+    .table th { font-weight: 600; color: #0a1628; background: #f7f8fa; }
+    .checklist { list-style: none; margin-left: 0; }
+    .checklist li { padding: 6px 0; padding-left: 24px; position: relative; }
+    .checklist li::before { content: '\u2610'; position: absolute; left: 0; color: #3b82f6; font-size: 1rem; }
+    .highlight { background: #f7f8fa; padding: 20px 24px; border-radius: 8px; border-left: 3px solid #3b82f6; margin: 16px 0; }
+    .flow-step { display: flex; align-items: flex-start; gap: 16px; margin: 16px 0; }
+    .flow-num { width: 36px; height: 36px; background: #3b82f6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; flex-shrink: 0; }
+    .flow-content { flex: 1; }
+    .flow-content strong { display: block; font-size: 0.95rem; margin-bottom: 4px; }
+    .flow-content p { margin: 0; font-size: 0.88rem; }
+    @media print { .page { padding: 40px 32px; } h1 { font-size: 2rem; } h2 { font-size: 1.3rem; } }
+  </style>
+</head>
+<body>
+
+<div class="page page-break">
+  <div class="badge">Client-Facing Document</div>
+  <h1>NovaMind</h1>
+  <p class="subtitle">Client Onboarding &amp; Delivery System</p>
+  <p style="color:#6b7280; font-size:0.85rem;">Step-by-step guide from first contact to ongoing optimization</p>
+
+  <h2>Overview</h2>
+  <p>This document outlines the complete NovaMind client journey from initial contact through ongoing system optimization. Every engagement follows this standardized process.</p>
+
+  <div class="highlight">
+    <p><strong>Our 6-Phase Pipeline:</strong> Audit → Blueprint → Build → QA → Deploy → Monitor</p>
+    <p>Typical timeline: 2–6 weeks from audit to go-live, depending on scope.</p>
+  </div>
+
+  <h2>Phase 1: Discovery &amp; Audit</h2>
+  <p><strong>Duration:</strong> 1–3 business days</p>
+  <p><strong>Cost:</strong> Free</p>
+
+  <div class="flow-step">
+    <div class="flow-num">1</div>
+    <div class="flow-content">
+      <strong>Initial Contact</strong>
+      <p>Client reaches out via website, email, or referral. We schedule a 30-minute discovery call within 24 hours.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">2</div>
+    <div class="flow-content">
+      <strong>Discovery Call</strong>
+      <p>We learn about their business: industry, team size, current tools, pain points, and goals. We determine if automation is a good fit.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">3</div>
+    <div class="flow-content">
+      <strong>Operational Audit</strong>
+      <p>We conduct a deep dive into their current workflows. We map every process, identify bottlenecks, and calculate time/cost waste.</p>
+    </div>
+  </div>
+
+  <h4>What We Assess</h4>
+  <ul>
+    <li>Customer-facing workflows (intake, response, follow-up)</li>
+    <li>Internal operations (scheduling, task management, approvals)</li>
+    <li>Financial workflows (invoicing, billing, collections)</li>
+    <li>Reporting and data management</li>
+    <li>Current tool stack and integration points</li>
+  </ul>
+
+  <h4>Audit Deliverable</h4>
+  <p>A concise audit summary showing: workflows mapped, time waste identified, automation opportunities ranked by ROI.</p>
+</div>
+
+<div class="page page-break">
+  <h2>Phase 2: Blueprint Strategy</h2>
+  <p><strong>Duration:</strong> 2–5 business days</p>
+  <p><strong>Cost:</strong> Included in setup package</p>
+
+  <div class="flow-step">
+    <div class="flow-num">4</div>
+    <div class="flow-content">
+      <strong>Blueprint Presentation</strong>
+      <p>We present a custom automation blueprint to the client. This includes every system we'll build, how they connect, the implementation timeline, and expected results.</p>
+    </div>
+  </div>
+
+  <h4>Blueprint Includes</h4>
+  <table class="table">
+    <tr><th>Component</th><th>Description</th></tr>
+    <tr><td>Automation Map</td><td>Visual diagram of all workflows to be automated</td></tr>
+    <tr><td>System Architecture</td><td>Which tools, integrations, and modules will be deployed</td></tr>
+    <tr><td>Timeline</td><td>Milestone-based project schedule with go-live date</td></tr>
+    <tr><td>ROI Projection</td><td>Expected hours saved, cost reduction, and capacity increase</td></tr>
+    <tr><td>Investment Summary</td><td>Setup fee + monthly subscription recommendation</td></tr>
+  </table>
+
+  <div class="flow-step">
+    <div class="flow-num">5</div>
+    <div class="flow-content">
+      <strong>Client Approval &amp; Contract</strong>
+      <p>Client reviews the blueprint, asks questions, and approves. We sign the service agreement and collect the setup payment.</p>
+    </div>
+  </div>
+
+  <h2>Phase 3: Build</h2>
+  <p><strong>Duration:</strong> 1–4 weeks (depending on package)</p>
+
+  <div class="flow-step">
+    <div class="flow-num">6</div>
+    <div class="flow-content">
+      <strong>System Configuration</strong>
+      <p>We build all automation systems according to the blueprint. This includes configuring integrations, setting up workflows, building dashboards, and creating AI response systems.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">7</div>
+    <div class="flow-content">
+      <strong>Milestone Reviews</strong>
+      <p>Client receives progress updates at each milestone. They can review, provide feedback, and request adjustments before we proceed.</p>
+    </div>
+  </div>
+
+  <h4>Build Checklist</h4>
+  <ul class="checklist">
+    <li>Core automation workflows configured</li>
+    <li>System integrations connected and tested</li>
+    <li>AI response systems trained and calibrated</li>
+    <li>Reporting dashboards built</li>
+    <li>Notification and alert rules set</li>
+    <li>Internal documentation created</li>
+  </ul>
+</div>
+
+<div class="page page-break">
+  <h2>Phase 4: Quality Assurance</h2>
+  <p><strong>Duration:</strong> 2–3 business days</p>
+
+  <div class="flow-step">
+    <div class="flow-num">8</div>
+    <div class="flow-content">
+      <strong>System Testing</strong>
+      <p>Every automation is stress-tested before touching live operations. We simulate real scenarios, validate data flows, and confirm every trigger and action works correctly.</p>
+    </div>
+  </div>
+
+  <h4>QA Checklist</h4>
+  <ul class="checklist">
+    <li>All workflow triggers tested with sample data</li>
+    <li>Integration data flows validated (bi-directional)</li>
+    <li>AI responses reviewed for accuracy and tone</li>
+    <li>Edge cases tested (after hours, holidays, duplicates)</li>
+    <li>Dashboard data accuracy verified</li>
+    <li>Notification delivery confirmed (email, SMS, Slack)</li>
+    <li>Error handling and fallback paths tested</li>
+  </ul>
+
+  <h2>Phase 5: Deployment</h2>
+  <p><strong>Duration:</strong> 1–2 business days</p>
+
+  <div class="flow-step">
+    <div class="flow-num">9</div>
+    <div class="flow-content">
+      <strong>Go-Live</strong>
+      <p>We deploy all systems to the client's live environment. Zero downtime. We monitor the first 24–48 hours actively to catch any issues.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">10</div>
+    <div class="flow-content">
+      <strong>Team Training</strong>
+      <p>The client's team receives hands-on training covering: how the automations work, what to expect, how to monitor, and who to contact for support.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">11</div>
+    <div class="flow-content">
+      <strong>Documentation Handoff</strong>
+      <p>We deliver complete documentation: system architecture, workflow descriptions, integration details, and a troubleshooting guide.</p>
+    </div>
+  </div>
+
+  <h4>Deployment Deliverables</h4>
+  <ul class="checklist">
+    <li>All systems live and operational</li>
+    <li>Team training completed (recorded for future reference)</li>
+    <li>System documentation delivered</li>
+    <li>Support channel established (email, Slack, or phone)</li>
+    <li>First-week monitoring schedule confirmed</li>
+  </ul>
+</div>
+
+<div class="page">
+  <h2>Phase 6: Monitor &amp; Optimize</h2>
+  <p><strong>Duration:</strong> Ongoing (monthly subscription)</p>
+
+  <div class="flow-step">
+    <div class="flow-num">12</div>
+    <div class="flow-content">
+      <strong>Performance Monitoring</strong>
+      <p>We continuously monitor system health, automation performance, and KPI tracking. Issues are flagged and resolved proactively.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">13</div>
+    <div class="flow-content">
+      <strong>Optimization Cycles</strong>
+      <p>Based on real performance data, we optimize automation rules, AI responses, workflow routing, and reporting. Systems get better over time.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">14</div>
+    <div class="flow-content">
+      <strong>Monthly Reporting</strong>
+      <p>Client receives a monthly report covering: hours saved, system uptime, automation performance, and recommendations for improvement.</p>
+    </div>
+  </div>
+
+  <h4>Monthly Report Includes</h4>
+  <table class="table">
+    <tr><th>Metric</th><th>Description</th></tr>
+    <tr><td>Hours Saved</td><td>Estimated time reduction vs. manual baseline</td></tr>
+    <tr><td>Automations Run</td><td>Total number of automated actions executed</td></tr>
+    <tr><td>Response Time</td><td>Average customer response time</td></tr>
+    <tr><td>System Uptime</td><td>Percentage availability of all systems</td></tr>
+    <tr><td>Issues Resolved</td><td>Bugs or issues identified and fixed</td></tr>
+    <tr><td>Recommendations</td><td>Suggested optimizations or new automations</td></tr>
+  </table>
+
+  <h2>Client Communication Schedule</h2>
+  <table class="table">
+    <tr><th>Subscription Tier</th><th>Check-in Frequency</th><th>Report Frequency</th><th>Support Response</th></tr>
+    <tr><td>Basic ($297/mo)</td><td>Monthly</td><td>Monthly</td><td>48h email</td></tr>
+    <tr><td>Pro ($697/mo)</td><td>Bi-weekly</td><td>Monthly</td><td>24h priority</td></tr>
+    <tr><td>Scale ($1,500/mo)</td><td>Weekly</td><td>Weekly</td><td>Same-day</td></tr>
+    <tr><td>Enterprise ($3K+/mo)</td><td>On-demand</td><td>Weekly</td><td>Dedicated engineer</td></tr>
+  </table>
+
+  <h2>Summary</h2>
+  <div class="highlight">
+    <p><strong>The NovaMind process is designed to be clear, predictable, and results-driven.</strong> From the first call to ongoing optimization, every step is documented and standardized. Our goal is to make automation feel simple and deliver measurable value from day one.</p>
+  </div>
+
+  <p style="margin-top:32px; color:#6b7280; font-size:0.82rem;">Questions? Contact us at <strong>contact@novamindai.com</strong></p>
+</div>
+
+</body>
+</html>

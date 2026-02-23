@@ -3,46 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaMind — Business Tools That Work While You Sleep</title>
-  <meta name="description" content="NovaMind gives businesses powerful tools — CRM, invoicing, scheduling, analytics, and more — with an AI agent that knows your business inside and out." />
+  <title>NovaMind — AI Automation Infrastructure for Service Businesses</title>
+  <meta name="description" content="NovaMind builds AI-powered operational systems that reduce labor dependency and increase scalability. Cut 20-40% of manual work." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
-<!-- Starfield Background -->
-  <div class="starfield">
-    <div class="starfield-layer starfield-layer-1"></div>
-    <div class="starfield-layer starfield-layer-2"></div>
-    <div class="starfield-layer starfield-layer-3"></div>
-  </div>
-
-  <!-- Scroll Rocket -->
-  <div class="scroll-rocket" id="scrollRocket">
-    <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C12 2 7 8 7 14C7 17 9.24 19.5 12 20C14.76 19.5 17 17 17 14C17 8 12 2 12 2Z" fill="url(#rocketGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
-      <circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.9)"/>
-      <path d="M9 20L12 26L15 20" fill="url(#flameGrad)" opacity="0.9"><animate attributeName="d" values="M9 20L12 26L15 20;M9.5 20L12 28L14.5 20;M9 20L12 26L15 20" dur="0.4s" repeatCount="indefinite"/></path>
-      <path d="M10 20L12 24L14 20" fill="rgba(255,255,255,0.4)"><animate attributeName="d" values="M10 20L12 24L14 20;M10.5 20L12 27L13.5 20;M10 20L12 24L14 20" dur="0.3s" repeatCount="indefinite"/></path>
-      <defs>
-        <linearGradient id="rocketGrad" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#888888"/></linearGradient>
-        <linearGradient id="flameGrad" x1="12" y1="20" x2="12" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#888888"/><stop offset="0.5" stop-color="#cccccc"/><stop offset="1" stop-color="#555555" stop-opacity="0"/></linearGradient>
-      </defs>
-    </svg>
-  </div>
-  <div class="rocket-trail" id="rocketTrail"><div class="rocket-trail-inner"></div></div>
-
-
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <!-- Noise Overlay -->
-  <div class="noise-overlay"></div>
 
   <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu">
@@ -50,7 +19,7 @@
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
     <a href="industries.html" onclick="closeMobileMenu()">Industries</a>
     <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
-    <a href="products.html" onclick="closeMobileMenu()">Products</a>
+    <a href="products.html" onclick="closeMobileMenu()">Modules</a>
     <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
   </nav>
 
@@ -59,7 +28,7 @@
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
         <div class="logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         NovaMind
       </a>
@@ -67,7 +36,7 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="industries.html">Industries</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html">Modules</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
       </ul>
       <div class="lang-switch">
@@ -77,10 +46,7 @@
           <button onclick="setLang('fr')">Fran&ccedil;ais</button>
         </div>
       </div>
-      <button class="btn btn-primary nav-cta magnetic" onclick="openSignup()">
-        <span>Start Building</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      <a href="#cta" class="nav-cta">Book Free Audit</a>
       <div class="hamburger" onclick="openMobileMenu()">
         <span></span><span></span><span></span>
       </div>
@@ -89,512 +55,323 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-gradient-orb hero-orb-1"></div>
-    <div class="hero-gradient-orb hero-orb-2"></div>
-    <div class="hero-gradient-orb hero-orb-3"></div>
-
+    <div class="bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
     <div class="container hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          AI-Powered Business Platform
-        </div>
-        <h1 class="hero-title">
-          Everything Your<br/>
-          <span class="gradient-text">Business Needs</span><br/>
-          In One Place.
-        </h1>
-        <p class="hero-desc">
-          CRM, invoicing, scheduling, analytics, and an AI agent that knows your business inside and out.
-          Start free. Scale when you're ready.
-        </p>
-        <div class="hero-actions">
-          <button onclick="openSignup()" class="btn btn-primary btn-glow magnetic">
-            <span>Start Building Free</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <a href="products.html" class="btn btn-glass magnetic">
-            <span>Explore Products</span>
-          </a>
-        </div>
-
-        <div class="hero-metrics">
-          <div class="hero-metric">
-            <div class="metric-value">9</div>
-            <div class="metric-suffix">+</div>
-            <div class="metric-label">Business Products</div>
-          </div>
-          <div class="hero-metric-divider"></div>
-          <div class="hero-metric">
-            <div class="metric-value">$0</div>
-            <div class="metric-label">To Get Started</div>
-          </div>
-          <div class="hero-metric-divider"></div>
-          <div class="hero-metric">
-            <div class="metric-value">24/7</div>
-            <div class="metric-label">AI Agent</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-card-orbit">
-          <div class="orbit-ring orbit-ring-1"></div>
-          <div class="orbit-ring orbit-ring-2"></div>
-          <div class="orbit-dot orbit-dot-1"></div>
-          <div class="orbit-dot orbit-dot-2"></div>
-          <div class="orbit-dot orbit-dot-3"></div>
-        </div>
-        <div class="hero-card-main glass-card">
-          <div class="card-header">
-            <div class="card-avatar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 8V4H8"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-            </div>
-            <div class="card-header-text">
-              <div class="name">Nova AI</div>
-              <div class="role">Your Business Agent</div>
-            </div>
-            <div class="card-status-dot"></div>
-          </div>
-          <div class="ai-response" id="aiResponse">
-            Your CRM just captured <strong>3 new leads</strong>. Invoices sent. Scheduling synced. Everything's running on autopilot.
-          </div>
-          <div class="typing-indicator">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="metrics-row">
-            <div class="metric-chip">
-              <div class="chip-value">9</div>
-              <div class="chip-label">Products</div>
-            </div>
-            <div class="metric-chip">
-              <div class="chip-value">$5</div>
-              <div class="chip-label">Per add-on</div>
-            </div>
-            <div class="metric-chip accent">
-              <div class="chip-value">AI</div>
-              <div class="chip-label">Always on</div>
-            </div>
-            <div class="metric-chip">
-              <div class="chip-value">0</div>
-              <div class="chip-label">Setup fees</div>
-            </div>
-          </div>
-        </div>
-        <div class="float-card float-card-1 glass-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          Revenue +20%
-        </div>
-        <div class="float-card float-card-2 glass-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          All Systems Live
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span>Scroll to explore</span>
-    </div>
-  </section>
-
-  <!-- ===================== MARQUEE ===================== -->
-  <section class="marquee-section">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span>CRM</span>
-        <span class="marquee-dot"></span>
-        <span>Invoicing</span>
-        <span class="marquee-dot"></span>
-        <span>Scheduling</span>
-        <span class="marquee-dot"></span>
-        <span>Analytics</span>
-        <span class="marquee-dot"></span>
-        <span>AI Agent</span>
-        <span class="marquee-dot"></span>
-        <span>Email Marketing</span>
-        <span class="marquee-dot"></span>
-        <span>Team Chat</span>
-        <span class="marquee-dot"></span>
-        <span>Inventory</span>
-        <span class="marquee-dot"></span>
-        <span>Project Management</span>
-        <span class="marquee-dot"></span>
-        <span>CRM</span>
-        <span class="marquee-dot"></span>
-        <span>Invoicing</span>
-        <span class="marquee-dot"></span>
-        <span>Scheduling</span>
-        <span class="marquee-dot"></span>
-        <span>Analytics</span>
-        <span class="marquee-dot"></span>
-        <span>AI Agent</span>
-        <span class="marquee-dot"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== FEATURED PRODUCTS ===================== -->
-  <section class="section section-services" id="services">
-    <div class="container">
-      <div class="section-header text-center">
-        <div class="section-label">Core Products</div>
-        <h2 class="section-title">
-          Tools That<br/><span class="gradient-text">Run Your Business</span>
-        </h2>
-        <p class="section-subtitle">9 powerful products. Pick what you need. Add more anytime for $5/mo each.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card glass-card">
-          <div class="service-number">01</div>
-          <div class="service-icon-wrap">
-            <i data-lucide="users"></i>
-          </div>
-          <h3>CRM</h3>
-          <p>Manage contacts, track deals, and nurture every relationship from lead to loyal customer.</p>
-          <ul class="service-features">
-            <li><span class="check-dot"></span>Contact management</li>
-            <li><span class="check-dot"></span>Deal pipeline</li>
-            <li><span class="check-dot"></span>Activity tracking</li>
-          </ul>
-          <div class="service-price">$5/mo</div>
-          <div class="service-card-glow"></div>
-        </div>
-        <div class="service-card glass-card featured">
-          <div class="featured-tag">Essential</div>
-          <div class="service-number">02</div>
-          <div class="service-icon-wrap">
-            <i data-lucide="receipt"></i>
-          </div>
-          <h3>Invoicing</h3>
-          <p>Create, send, and track invoices automatically. Get paid faster with built-in payment processing.</p>
-          <ul class="service-features">
-            <li><span class="check-dot"></span>Auto-generation</li>
-            <li><span class="check-dot"></span>Payment tracking</li>
-            <li><span class="check-dot"></span>Recurring invoices</li>
-          </ul>
-          <div class="service-price">$5/mo</div>
-          <div class="service-card-glow"></div>
-        </div>
-        <div class="service-card glass-card">
-          <div class="service-number">03</div>
-          <div class="service-icon-wrap">
-            <i data-lucide="calendar"></i>
-          </div>
-          <h3>Scheduling</h3>
-          <p>Smart appointment booking that syncs with your calendar and eliminates no-shows.</p>
-          <ul class="service-features">
-            <li><span class="check-dot"></span>Online booking</li>
-            <li><span class="check-dot"></span>Calendar sync</li>
-            <li><span class="check-dot"></span>SMS reminders</li>
-          </ul>
-          <div class="service-price">$5/mo</div>
-          <div class="service-card-glow"></div>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top: 60px">
-        <a href="products.html" class="btn btn-glass magnetic">
-          <span>View All 9 Products</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <div class="hero-label">AI Automation Infrastructure</div>
+      <h1>Automate Your<br/><span class="gradient-text">Business Operations.</span></h1>
+      <p class="hero-desc">Cut 20&ndash;40% of manual work using AI-powered automation systems. Built for service-based businesses with repetitive operations and cashflow.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary btn-lg">
+          <span>Book Free Automation Audit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#industries" class="btn btn-outline btn-lg">
+          <span>See Industry Examples</span>
         </a>
       </div>
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <div class="metric-value">20&ndash;40%</div>
+          <div class="metric-label">Manual work reduced</div>
+        </div>
+        <div class="hero-metric">
+          <div class="metric-value">20+</div>
+          <div class="metric-label">Hours saved / month</div>
+        </div>
+        <div class="hero-metric">
+          <div class="metric-value">7</div>
+          <div class="metric-label">Industries served</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===================== BENTO GRID — PLATFORM ===================== -->
-  <section class="section section-bento">
+  <!-- ===================== THE PROBLEM ===================== -->
+  <section class="section" id="problem">
     <div class="container">
       <div class="section-header text-center">
-        <div class="section-label">Platform Benefits</div>
-        <h2 class="section-title">
-          More Than Just<br/><span class="gradient-text">Software</span>
-        </h2>
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">Your Business Is Losing<br/><span class="gradient-text">Time, Money, and Growth</span></h2>
+        <p class="section-subtitle">Service businesses lose thousands every month to inefficiencies that AI automation eliminates.</p>
       </div>
-      <div class="bento-grid">
-        <div class="bento-card bento-large glass-card">
-          <div class="bento-icon">
-            <i data-lucide="bot"></i>
-          </div>
-          <h3>AI Business Agent</h3>
-          <p>Every paid plan includes an AI agent that understands your business, answers questions, and helps you make better decisions. Available 24/7, trained on your data.</p>
-          <div class="bento-stat">
-            <span class="bento-stat-value">24/7</span>
-            <span class="bento-stat-label">Always-on intelligent assistant</span>
+      <div class="problem-grid">
+        <div class="problem-card glass-card reveal">
+          <div class="problem-icon"><i data-lucide="clock"></i></div>
+          <div>
+            <h4>20+ hours/month in repetitive admin</h4>
+            <p>Data entry, scheduling confirmations, follow-up emails, invoice generation &mdash; tasks that run on autopilot with the right system.</p>
           </div>
         </div>
-        <div class="bento-card glass-card">
-          <div class="bento-icon accent">
-            <i data-lucide="sparkles"></i>
-          </div>
-          <h3>New Products</h3>
-          <p>We release new products regularly. They're automatically available in your account.</p>
-          <div class="bento-stat">
-            <span class="bento-stat-value">Free</span>
-            <span class="bento-stat-label">Updates included</span>
+        <div class="problem-card glass-card reveal">
+          <div class="problem-icon"><i data-lucide="dollar-sign"></i></div>
+          <div>
+            <h4>Money lost to operational inefficiencies</h4>
+            <p>Missed follow-ups, late invoices, and manual errors cost more than most owners realize. Automation closes those gaps.</p>
           </div>
         </div>
-        <div class="bento-card glass-card">
-          <div class="bento-icon">
-            <i data-lucide="puzzle"></i>
-          </div>
-          <h3>$5/mo Add-Ons</h3>
-          <p>Need more than your plan includes? Add any product for just $5/month.</p>
-          <div class="bento-stat">
-            <span class="bento-stat-value">$5</span>
-            <span class="bento-stat-label">Per additional product</span>
+        <div class="problem-card glass-card reveal">
+          <div class="problem-icon"><i data-lucide="user-x"></i></div>
+          <div>
+            <h4>Customers lost to slow response</h4>
+            <p>If a lead waits more than 5 minutes, the conversion rate drops 80%. AI responds in seconds, 24/7, across every channel.</p>
           </div>
         </div>
-        <div class="bento-card bento-wide glass-card">
-          <div class="bento-icon accent">
-            <i data-lucide="shield-check"></i>
-          </div>
-          <h3>No Contracts, No Hidden Fees</h3>
-          <p>Cancel anytime. No lock-in periods, no cancellation fees. Transparent pricing from day one, with every product clearly listed at $5/mo.</p>
-          <div class="bento-stat">
-            <span class="bento-stat-value">$0</span>
-            <span class="bento-stat-label">To start — free plan available</span>
+        <div class="problem-card glass-card reveal">
+          <div class="problem-icon"><i data-lucide="trending-down"></i></div>
+          <div>
+            <h4>Growth limited by staff dependency</h4>
+            <p>Scaling means hiring, which means cost and management overhead. Automation lets you scale throughput without scaling headcount.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT WE BUILD ===================== -->
+  <section class="section" id="build" style="background: var(--navy-light); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">What We Build</div>
+        <h2 class="section-title">AI-Powered <span class="gradient-text">Operational Systems</span></h2>
+        <p class="section-subtitle">Infrastructure modules that plug into your business and run autonomously.</p>
+      </div>
+      <div class="build-grid">
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="message-square"></i></div>
+          <h4>AI Customer Response</h4>
+          <p>Automated responses across chat, SMS, email, and voice. Instant lead capture and qualification, 24/7.</p>
+        </div>
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="workflow"></i></div>
+          <h4>Workflow Automation</h4>
+          <p>Client intake, appointment scheduling, follow-ups, and internal task routing &mdash; all on autopilot.</p>
+        </div>
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="bar-chart-3"></i></div>
+          <h4>Automated Reporting</h4>
+          <p>Owner-level performance dashboards. Revenue, throughput, response times &mdash; delivered automatically.</p>
+        </div>
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="plug"></i></div>
+          <h4>CRM &amp; System Integrations</h4>
+          <p>Connect your existing tools &mdash; POS, CRM, calendars, accounting &mdash; into one synchronized system.</p>
+        </div>
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="brain"></i></div>
+          <h4>Decision Intelligence</h4>
+          <p>AI-driven alerts and actions. Know when to reorder, who to follow up with, and where to optimize.</p>
+        </div>
+        <div class="build-card glass-card reveal">
+          <div class="build-icon"><i data-lucide="mic"></i></div>
+          <h4>AI Voice Systems</h4>
+          <p>Automated phone handling &mdash; appointment booking, FAQs, call routing &mdash; without a receptionist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INDUSTRY EXAMPLES ===================== -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">Industry Examples</div>
+        <h2 class="section-title">Built for <span class="gradient-text">Your Industry</span></h2>
+        <p class="section-subtitle">Every deployment follows the same pattern: identify the problem, automate the solution, measure the result.</p>
+      </div>
+      <div class="build-grid">
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="utensils" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Restaurant</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Missed reservations + manual inventory tracking</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: AI reservation system + inventory alerts</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 15&ndash;25 hours saved/month</p>
+        </div>
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="dumbbell" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Gym / Fitness</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Manual membership management + missed billings</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: Membership automation + billing reminders</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 20&ndash;30 hours saved/month</p>
+        </div>
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="wrench" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Garage / Auto</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Job tracking on paper + invoice delays</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: Digital job tracking + auto-invoicing</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 10&ndash;20 hours saved/month</p>
+        </div>
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="scale" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Law Firm</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Manual client intake + case status follow-ups</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: AI intake forms + case workflow automation</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 15&ndash;25 hours saved/month</p>
+        </div>
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="hard-hat" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Construction</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Project updates via text + scattered estimates</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: Automated progress reports + estimate workflows</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 10&ndash;20 hours saved/month</p>
+        </div>
+        <div class="glass-card reveal" style="padding: 28px 24px;">
+          <h4 style="font-size:1.05rem; font-weight:600; margin-bottom:12px;"><i data-lucide="building-2" style="width:18px;height:18px;display:inline;vertical-align:-3px;color:var(--blue);margin-right:8px;"></i>Real Estate</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">Problem: Lead follow-up delays + manual showing scheduling</p>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">Automation: AI lead nurturing + automated booking</p>
+          <p style="font-size:0.82rem;color:var(--blue);font-weight:600;">Result: 15&ndash;30 hours saved/month</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:48px;">
+        <a href="industries.html" class="btn btn-outline">
+          <span>View All Industry Solutions</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ===================== HOW IT WORKS ===================== -->
-  <section class="section section-process">
+  <section class="section" style="background: var(--navy-light); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
     <div class="container">
       <div class="section-header text-center">
         <div class="section-label">How It Works</div>
-        <h2 class="section-title">
-          Up and Running in<br/><span class="gradient-text">Under 60 Seconds</span>
-        </h2>
+        <h2 class="section-title">A Standardized <span class="gradient-text">Delivery System</span></h2>
+        <p class="section-subtitle">From audit to deployment in weeks, not months. Every engagement follows a proven process.</p>
       </div>
-      <div class="process-timeline">
-        <div class="process-line"></div>
-        <div class="process-step">
-          <div class="step-marker">
-            <span>01</span>
-          </div>
-          <div class="step-content glass-card">
-            <h3>Create Your Account</h3>
-            <p>Enter your email, password, and business name. That's it. No credit card required for the free plan.</p>
-          </div>
+      <div class="pipeline-grid">
+        <div class="pipeline-card glass-card reveal">
+          <div class="pipeline-num">STEP 01</div>
+          <h3>Free Audit</h3>
+          <p>We map your current operations and identify exactly where automation will save the most time and money.</p>
         </div>
-        <div class="process-step">
-          <div class="step-marker">
-            <span>02</span>
-          </div>
-          <div class="step-content glass-card">
-            <h3>Select Your Plan</h3>
-            <p>Free, Start Up, Max, or Custom. Each plan includes a set number of products and optional AI agent access.</p>
-          </div>
+        <div class="pipeline-card glass-card reveal">
+          <div class="pipeline-num">STEP 02</div>
+          <h3>Blueprint Strategy</h3>
+          <p>You receive a custom automation blueprint with systems, integrations, timelines, and expected ROI.</p>
         </div>
-        <div class="process-step">
-          <div class="step-marker">
-            <span>03</span>
-          </div>
-          <div class="step-content glass-card">
-            <h3>Select Products & Grow</h3>
-            <p>Pick the tools your business needs — CRM, invoicing, scheduling, and more. Add extra products anytime for $5/mo each.</p>
-          </div>
+        <div class="pipeline-card glass-card reveal">
+          <div class="pipeline-num">STEP 03</div>
+          <h3>AI System Deployment</h3>
+          <p>We build and deploy your automation systems, connect your existing tools, and go live with full QA.</p>
         </div>
       </div>
-      <div class="text-center" style="margin-top: 48px">
-        <a href="how-it-works.html" class="btn btn-glass magnetic">
-          <span>Learn More</span>
+      <div class="text-center" style="margin-top:36px">
+        <a href="how-it-works.html" class="btn btn-outline">
+          <span>See Full Process</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== WHY NOVAMIND ===================== -->
-  <section class="section section-why">
-    <div class="container">
-      <div class="why-layout">
-        <div class="why-left">
-          <div class="section-label">Why NovaMind</div>
-          <h2 class="section-title">
-            Built for Businesses<br/><span class="gradient-text">That Move Fast</span>
-          </h2>
-          <div class="why-features">
-            <div class="why-feature">
-              <div class="why-feature-icon"><i data-lucide="cpu"></i></div>
-              <div>
-                <h4>AI That Knows Your Business</h4>
-                <p>Your AI agent learns your data, customers, and workflows to give you answers instantly.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon"><i data-lucide="plug"></i></div>
-              <div>
-                <h4>All-in-One Platform</h4>
-                <p>CRM, invoicing, scheduling, analytics, and more — connected in one ecosystem.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon"><i data-lucide="refresh-cw"></i></div>
-              <div>
-                <h4>Always Evolving</h4>
-                <p>New products released regularly. Your account grows with new tools automatically.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon"><i data-lucide="wallet"></i></div>
-              <div>
-                <h4>Transparent Pricing</h4>
-                <p>$0 to start. $5/mo per additional product. No hidden fees, ever.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="why-right">
-          <div class="big-stat-card glass-card">
-            <div class="big-stat-number">9</div>
-            <div class="big-stat-suffix">+</div>
-            <div class="big-stat-label">Business products available today</div>
-          </div>
-          <div class="mini-stats-row">
-            <div class="mini-stat-card glass-card">
-              <div class="mini-stat-value">$0</div>
-              <div class="mini-stat-label">To start</div>
-            </div>
-            <div class="mini-stat-card glass-card">
-              <div class="mini-stat-value">$5</div>
-              <div class="mini-stat-label">Per add-on</div>
-            </div>
-            <div class="mini-stat-card glass-card">
-              <div class="mini-stat-value">24/7</div>
-              <div class="mini-stat-label">AI agent</div>
-            </div>
-            <div class="mini-stat-card glass-card">
-              <div class="mini-stat-value">60s</div>
-              <div class="mini-stat-label">Setup time</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== TESTIMONIALS ===================== -->
-  <section class="section section-testimonials">
-    <div class="container">
-      <div class="section-header text-center">
-        <div class="section-label">What Users Say</div>
-        <h2 class="section-title">
-          Businesses <span class="gradient-text">Love</span> NovaMind
-        </h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card glass-card">
-          <div class="testimonial-quote">"</div>
-          <blockquote>The CRM and invoicing products alone saved us hours every week. The AI agent is like having a business analyst on staff 24/7.</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">SK</div>
-            <div>
-              <div class="author-name">Sarah K.</div>
-              <div class="author-role">Marketing Agency</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-          </div>
-        </div>
-        <div class="testimonial-card glass-card">
-          <div class="testimonial-quote">"</div>
-          <blockquote>We switched from 4 different tools to NovaMind. Everything is connected now. Scheduling, invoicing, analytics — all in one place.</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">MT</div>
-            <div>
-              <div class="author-name">Marcus T.</div>
-              <div class="author-role">Fitness Studio Owner</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-          </div>
-        </div>
-        <div class="testimonial-card glass-card">
-          <div class="testimonial-quote">"</div>
-          <blockquote>Started on the free plan to test it out. Within a week I upgraded to Max. The products are genuinely good and the $5/mo add-ons are a no-brainer.</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">ER</div>
-            <div>
-              <div class="author-name">Elena R.</div>
-              <div class="author-role">Salon Owner</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ===================== PRICING PREVIEW ===================== -->
-  <section class="section section-pricing">
+  <section class="section" id="pricing-preview">
     <div class="container">
       <div class="section-header text-center">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">
-          Simple Plans,<br/><span class="gradient-text">Real Value</span>
-        </h2>
-        <p class="section-subtitle">Start free. Add products and upgrade as your business grows.</p>
+        <h2 class="section-title">Transparent <span class="gradient-text">Investment</span></h2>
+        <p class="section-subtitle">Setup packages to build your systems. Monthly subscriptions to run and optimize them.</p>
       </div>
-      <div class="pricing-cards">
-        <div class="pricing-card glass-card">
-          <div class="pricing-tier">Free</div>
-          <div class="pricing-amount">$0<span>/mo</span></div>
-          <div class="pricing-desc">1 product included. No credit card required.</div>
-          <button onclick="openSignup()" class="btn btn-glass magnetic"><span>Get Started</span></button>
+
+      <h3 style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--blue);margin-bottom:20px;">Setup Packages</h3>
+      <div class="pricing-grid" style="margin-bottom:48px;">
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-amount">$1,500</div>
+          <div class="pricing-desc">Basic automation + 1 system integration</div>
         </div>
-        <div class="pricing-card glass-card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-tier">Max</div>
-          <div class="pricing-amount">$79<span>/mo</span></div>
-          <div class="pricing-desc">5 products + AI agent. Best for growing teams.</div>
-          <button onclick="openSignup()" class="btn btn-primary btn-glow magnetic"><span>Start Building</span></button>
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-amount">$3,000</div>
+          <div class="pricing-desc">Multi-system automation + dashboard</div>
         </div>
-        <div class="pricing-card glass-card">
-          <div class="pricing-tier">Start Up</div>
-          <div class="pricing-amount">$29<span>/mo</span></div>
-          <div class="pricing-desc">3 products + AI agent. Great for small teams.</div>
-          <button onclick="openSignup()" class="btn btn-glass magnetic"><span>Get Started</span></button>
+        <div class="pricing-card glass-card featured reveal">
+          <div class="pricing-badge">Popular</div>
+          <div class="pricing-tier">Scale</div>
+          <div class="pricing-amount">$7,500</div>
+          <div class="pricing-desc">Full workflow automation + integrations</div>
+        </div>
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-amount">$15K<span>+</span></div>
+          <div class="pricing-desc">Custom build for complex operations</div>
         </div>
       </div>
-      <div class="text-center" style="margin-top: 48px">
-        <a href="pricing.html" class="btn btn-primary magnetic">
-          <span>View Full Pricing & Plans</span>
+
+      <h3 style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--blue);margin-bottom:20px;">Monthly Subscriptions</h3>
+      <div class="pricing-grid">
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Basic</div>
+          <div class="pricing-amount">$297<span>/mo</span></div>
+          <div class="pricing-desc">System maintenance + monitoring</div>
+        </div>
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-amount">$697<span>/mo</span></div>
+          <div class="pricing-desc">Active optimization + support</div>
+        </div>
+        <div class="pricing-card glass-card featured reveal">
+          <div class="pricing-badge">Popular</div>
+          <div class="pricing-tier">Scale</div>
+          <div class="pricing-amount">$1,500<span>/mo</span></div>
+          <div class="pricing-desc">Full management + scaling support</div>
+        </div>
+        <div class="pricing-card glass-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-amount">$3K<span>+/mo</span></div>
+          <div class="pricing-desc">Dedicated team + custom SLA</div>
+        </div>
+      </div>
+
+      <div class="disclaimer">Exact pricing depends on workflow complexity. Book an audit for a custom quote.</div>
+
+      <div class="text-center" style="margin-top:36px">
+        <a href="pricing.html" class="btn btn-primary">
+          <span>View Full Pricing &amp; Add-Ons</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CTA ===================== -->
-  <section class="section section-cta">
-    <div class="cta-bg-effects">
-      <div class="cta-orb cta-orb-1"></div>
-      <div class="cta-orb cta-orb-2"></div>
-    </div>
+  <!-- ===================== CREDIBILITY ===================== -->
+  <section class="section" style="background: var(--navy-light); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
     <div class="container">
-      <div class="cta-content text-center">
-        <div class="section-label">Get Started</div>
-        <h2 class="cta-title">
-          Start Building Your<br/>Business Today
-        </h2>
-        <p class="cta-desc">
-          Create your free account in under 60 seconds. No credit card required. Upgrade anytime.
-        </p>
-        <div class="cta-actions">
-          <button onclick="openSignup()" class="btn btn-primary btn-glow btn-lg magnetic">
-            <span>Create Free Account</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <a href="products.html" class="btn btn-glass btn-lg magnetic"><span>Browse Products</span></a>
+      <div class="section-header text-center">
+        <div class="section-label">What We Measure</div>
+        <h2 class="section-title">Built for <span class="gradient-text">Measurable Impact</span></h2>
+        <p class="section-subtitle">Built for service-based businesses with repetitive operations and cashflow. We measure what matters.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card glass-card reveal">
+          <div class="trust-value">Hours</div>
+          <div class="trust-label">Saved per month</div>
         </div>
+        <div class="trust-card glass-card reveal">
+          <div class="trust-value">Response</div>
+          <div class="trust-label">Time reduction</div>
+        </div>
+        <div class="trust-card glass-card reveal">
+          <div class="trust-value">Throughput</div>
+          <div class="trust-label">Capacity increase</div>
+        </div>
+        <div class="trust-card glass-card reveal">
+          <div class="trust-value">Churn</div>
+          <div class="trust-label">Customer retention</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section section-cta" id="cta">
+    <div class="container">
+      <div class="section-label">Get Started</div>
+      <h2 class="cta-title">Scale your business without<br/>scaling your payroll.</h2>
+      <p class="cta-desc">Book a free automation audit. We'll map your operations and show you exactly where AI saves time and money.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@novamindai.com?subject=Free%20Automation%20Audit" class="btn btn-primary btn-lg">
+          <span>Book Your Free Audit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="industries.html" class="btn btn-outline btn-lg"><span>Explore Industries</span></a>
       </div>
     </div>
   </section>
@@ -606,39 +383,37 @@
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
             <div class="logo-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             NovaMind
           </a>
-          <p>Business tools that work while you sleep. CRM, invoicing, scheduling, and more — all in one platform.</p>
+          <p>AI automation infrastructure for service-based businesses. Reduce labor dependency, increase scalability.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
             <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>Platform</h4>
+          <h4>Company</h4>
           <ul class="footer-links">
-            <li><a href="products.html">Products</a></li>
+            <li><a href="industries.html">Industries</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
+          <h4>Modules</h4>
           <ul class="footer-links">
-            <li><a href="products.html">CRM</a></li>
-            <li><a href="products.html">Invoicing</a></li>
-            <li><a href="products.html">AI Chatbot</a></li>
-            <li><a href="products.html">Analytics</a></li>
+            <li><a href="products.html">Customer Operations</a></li>
+            <li><a href="products.html">Internal Operations</a></li>
+            <li><a href="products.html">Reporting &amp; Intelligence</a></li>
+            <li><a href="products.html">Integrations</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <ul class="footer-links">
             <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
-            <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
             <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
@@ -654,7 +429,6 @@
   </footer>
 
   <script src="main.js"></script>
-  <script src="signup.js"></script>
   <script src="chatbot.js"></script>
   <script src="lang.js"></script>
 </body>
