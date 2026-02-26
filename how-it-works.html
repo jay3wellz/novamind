@@ -3,36 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How It Works — NovaMind | Standardized Delivery System</title>
-  <meta name="description" content="From audit to deployment: a standardized, founder-independent delivery system. Audit, Blueprint, Build, QA, Deploy, Monitor." />
+  <title>How It Works. NovaMind | From Discovery to Automation</title>
+  <meta name="description" content="NovaMind's structured 6-step deployment process: Discovery, Architecture, Build & Integrate, Test & QA, Go-Live & Train, Optimize & Expand." />
+  <meta property="og:title" content="How It Works. NovaMind | From Discovery to Automation" />
+  <meta property="og:description" content="A structured 6-step deployment process: Discovery, Architecture, Build, Test, Go-Live, Optimize." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://novamindai.com/how-it-works" />
+  <meta property="og:image" content="https://novamindai.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How NovaMind Works. From Discovery to Automation" />
+  <meta name="twitter:description" content="6-step deployment process calibrated to your industry." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
+  <div class="starfield">
+    <div class="starfield-layer starfield-layer-1"></div>
+    <div class="starfield-layer starfield-layer-2"></div>
+    <div class="starfield-layer starfield-layer-3"></div>
+  </div>
+  <div class="scroll-rocket" id="scrollRocket">
+    <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C12 2 7 8 7 14C7 17 9.24 19.5 12 20C14.76 19.5 17 17 17 14C17 8 12 2 12 2Z" fill="url(#rocketGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+      <circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.9)"/>
+      <path d="M9 20L12 26L15 20" fill="url(#flameGrad)" opacity="0.9"><animate attributeName="d" values="M9 20L12 26L15 20;M9.5 20L12 28L14.5 20;M9 20L12 26L15 20" dur="0.4s" repeatCount="indefinite"/></path>
+      <path d="M10 20L12 24L14 20" fill="rgba(255,255,255,0.4)"><animate attributeName="d" values="M10 20L12 24L14 20;M10.5 20L12 27L13.5 20;M10 20L12 24L14 20" dur="0.3s" repeatCount="indefinite"/></path>
+      <defs>
+        <linearGradient id="rocketGrad" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#888888"/></linearGradient>
+        <linearGradient id="flameGrad" x1="12" y1="20" x2="12" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#888888"/><stop offset="0.5" stop-color="#cccccc"/><stop offset="1" stop-color="#555555" stop-opacity="0"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="rocket-trail" id="rocketTrail"><div class="rocket-trail-inner"></div></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise-overlay"></div>
 
+  <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu">
     <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
-    <a href="index.html">Home</a>
-    <a href="industries.html">Industries</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="products.html">Modules</a>
-    <a href="how-it-works.html">How It Works</a>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="industries.html" onclick="closeMobileMenu()">Industries</a>
+    <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
+    <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
   </nav>
 
+  <!-- Navbar -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         NovaMind
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="industries.html">Industries</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="products.html">Modules</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="how-it-works.html" class="active">How It Works</a></li>
       </ul>
       <div class="lang-switch">
@@ -42,139 +77,213 @@
           <button onclick="setLang('fr')">Fran&ccedil;ais</button>
         </div>
       </div>
-      <a href="mailto:contact@novamindai.com?subject=Free%20Automation%20Audit" class="nav-cta">Book Free Audit</a>
+      <a href="mailto:contact@novamindai.com" class="btn btn-primary nav-cta magnetic">
+        <span>Free Operations Review</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
       <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
     </div>
   </header>
 
   <!-- Page Hero -->
   <section class="page-hero">
-    <div class="bg-grid"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="container" style="position:relative;z-index:1;">
+    <div class="container">
       <div class="section-label">How It Works</div>
-      <h1>A Standardized<br/><span class="gradient-text">Delivery System</span></h1>
-      <p>Every engagement follows a proven, repeatable process. Systemized and founder-independent.</p>
+      <h1>From Discovery to <span class="gradient-text">Automation</span></h1>
+      <p>A structured deployment process, calibrated to your industry. Every client goes through the same proven steps. and the more we deploy, the faster each deployment becomes.</p>
     </div>
   </section>
 
-  <!-- Pipeline Visual -->
-  <section style="padding: 0 0 40px; position: relative; z-index: 1;">
+  <!-- 6-Step Process -->
+  <section class="section section-process">
     <div class="container">
-      <div class="pipeline-visual">
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">01</div>
-            <div class="pipeline-step-label">Audit</div>
+      <div class="process-timeline">
+        <div class="process-line"></div>
+
+        <div class="process-step">
+          <div class="step-marker">
+            <span>01</span>
           </div>
-          <div class="pipeline-connector"></div>
-        </div>
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">02</div>
-            <div class="pipeline-step-label">Blueprint</div>
-          </div>
-          <div class="pipeline-connector"></div>
-        </div>
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">03</div>
-            <div class="pipeline-step-label">Build</div>
-          </div>
-          <div class="pipeline-connector"></div>
-        </div>
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">04</div>
-            <div class="pipeline-step-label">QA</div>
-          </div>
-          <div class="pipeline-connector"></div>
-        </div>
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">05</div>
-            <div class="pipeline-step-label">Deploy</div>
-          </div>
-          <div class="pipeline-connector"></div>
-        </div>
-        <div class="pipeline-step-mini">
-          <div>
-            <div class="pipeline-dot">06</div>
-            <div class="pipeline-step-label">Monitor</div>
+          <div class="step-content glass-card">
+            <h3>Discovery</h3>
+            <p>We deep-dive into your existing tools, workflows, and pain points. We map every manual process and identify the top 3&ndash;5 automation opportunities ranked by impact on your business.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Detailed Steps -->
-  <section class="section">
-    <div class="container">
-      <div class="pipeline-grid-6">
-
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 01</div>
-          <h3>Audit</h3>
-          <p>We conduct a comprehensive operational audit of your business. We map every workflow, identify bottlenecks, and calculate where automation delivers the highest ROI. This phase is free.</p>
+        <div class="process-step">
+          <div class="step-marker">
+            <span>02</span>
+          </div>
+          <div class="step-content glass-card">
+            <h3>Architecture</h3>
+            <p>We design the automation blueprint: which workflows to automate, which tools to connect, what triggers and actions to set up, what escalation logic to implement, and what reporting outputs you need.</p>
+          </div>
         </div>
 
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 02</div>
-          <h3>Blueprint</h3>
-          <p>You receive a detailed automation blueprint: systems to build, integrations required, implementation timeline, expected hours saved, and projected ROI. Full transparency before you invest.</p>
+        <div class="process-step">
+          <div class="step-marker">
+            <span>03</span>
+          </div>
+          <div class="step-content glass-card">
+            <h3>Build & Integrate</h3>
+            <p>We build the automations using our infrastructure stack and connect to your existing tools via APIs and integration platforms. No replacement of existing software. Just intelligent automation on top.</p>
+          </div>
         </div>
 
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 03</div>
-          <h3>Build</h3>
-          <p>Our team builds your automation systems according to the blueprint. We configure integrations, set up workflows, and create your reporting dashboards. You review progress at each milestone.</p>
+        <div class="process-step">
+          <div class="step-marker">
+            <span>04</span>
+          </div>
+          <div class="step-content glass-card">
+            <h3>Test & QA</h3>
+            <p>Full testing of every automation with real or simulated data. Edge case coverage. Client walkthrough and sign-off before anything goes live.</p>
+          </div>
         </div>
 
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 04</div>
-          <h3>Quality Assurance</h3>
-          <p>Every system is stress-tested before it touches your live operations. We simulate real scenarios, validate data flows, and ensure every automation performs exactly as designed.</p>
+        <div class="process-step">
+          <div class="step-marker">
+            <span>05</span>
+          </div>
+          <div class="step-content glass-card">
+            <h3>Go-Live & Train</h3>
+            <p>Deploy to your live environment. Train you and your key staff on how to monitor and interact with the system. Set clear expectations for the first 30 days.</p>
+          </div>
         </div>
 
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 05</div>
-          <h3>Deploy</h3>
-          <p>We deploy to your live environment with zero downtime. Your team gets hands-on training, documentation, and a direct support channel. Go-live is seamless.</p>
-        </div>
-
-        <div class="pipeline-card glass-card reveal">
-          <div class="pipeline-num">PHASE 06</div>
-          <h3>Monitor &amp; Optimize</h3>
-          <p>Post-launch, we continuously monitor system performance. Monthly reports, proactive optimization, and ongoing support ensure your automation gets better over time, not stale.</p>
+        <div class="process-step">
+          <div class="step-marker">
+            <span>06</span>
+          </div>
+          <div class="step-content glass-card">
+            <h3>Optimize & Expand</h3>
+            <p>After 30 days, we review performance data. Optimize underperforming automations. Identify upsell opportunities. Begin the next phase of automation expansion.</p>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- What Makes This Different -->
-  <section class="section" style="background: var(--navy-light); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+  <!-- What You Get -->
+  <section class="section section-why">
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-left">
+          <div class="section-label">What You Get</div>
+          <h2 class="section-title">
+            Infrastructure That <span class="gradient-text">Scales With You</span>
+          </h2>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="why-feature-icon"><i data-lucide="zap"></i></div>
+              <div>
+                <h4>Automation That Runs 24/7</h4>
+                <p>Systems that handle inquiries, route tasks, trigger follow-ups, and send reports without human intervention. around the clock.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-icon"><i data-lucide="book-open"></i></div>
+              <div>
+                <h4>Industry Playbooks</h4>
+                <p>Pre-built automation templates calibrated to your specific vertical. restaurants, garages, gyms, clinics, and more.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-icon"><i data-lucide="shield-check"></i></div>
+              <div>
+                <h4>Enterprise-Grade Security</h4>
+                <p>Bank-level encryption and automatic backups. Your business data is always protected.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-icon"><i data-lucide="settings"></i></div>
+              <div>
+                <h4>Dedicated Optimization</h4>
+                <p>Continuous improvement of your automation systems. We monitor, refine, and expand your infrastructure over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-right">
+          <div class="big-stat-card glass-card">
+            <div class="big-stat-number">90</div>
+            <div class="big-stat-suffix">days</div>
+            <div class="big-stat-label">To measurable ROI</div>
+          </div>
+          <div class="mini-stats-row">
+            <div class="mini-stat-card glass-card">
+              <div class="mini-stat-value">8+</div>
+              <div class="mini-stat-label">Industries</div>
+            </div>
+            <div class="mini-stat-card glass-card">
+              <div class="mini-stat-value">20-40%</div>
+              <div class="mini-stat-label">Automated</div>
+            </div>
+            <div class="mini-stat-card glass-card">
+              <div class="mini-stat-value">24/7</div>
+              <div class="mini-stat-label">Running</div>
+            </div>
+            <div class="mini-stat-card glass-card">
+              <div class="mini-stat-value">2min</div>
+              <div class="mini-stat-label">Daily check-in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-testimonials">
     <div class="container">
       <div class="section-header text-center">
-        <div class="section-label">Why This Works</div>
-        <h2 class="section-title">Built to Be <span class="gradient-text">Repeatable</span></h2>
-        <p class="section-subtitle">Our delivery system is standardized and documented. It runs the same way every time, regardless of who manages it.</p>
+        <div class="section-label">What Clients Say</div>
+        <h2 class="section-title">
+          Businesses <span class="gradient-text">Trust</span> NovaMind
+        </h2>
       </div>
-      <div class="build-grid">
-        <div class="build-card glass-card reveal">
-          <div class="build-icon"><i data-lucide="repeat"></i></div>
-          <h4>Standardized Process</h4>
-          <p>Every engagement follows the same 6-phase pipeline. Consistent quality, predictable timelines.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">"</div>
+          <blockquote>NovaMind's automated response system captures leads we used to miss entirely. We went from responding in hours to responding in seconds.</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sarah K.</div>
+              <div class="author-role">Marketing Agency</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
         </div>
-        <div class="build-card glass-card reveal">
-          <div class="build-icon"><i data-lucide="file-text"></i></div>
-          <h4>Fully Documented</h4>
-          <p>Every system we build comes with documentation. Your team can understand and manage it independently.</p>
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">"</div>
+          <blockquote>The workflow automation cut our admin hours in half. Scheduling, follow-ups, billing. it all runs on autopilot now.</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MT</div>
+            <div>
+              <div class="author-name">Marcus T.</div>
+              <div class="author-role">Fitness Studio Owner</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
         </div>
-        <div class="build-card glass-card reveal">
-          <div class="build-icon"><i data-lucide="shield-check"></i></div>
-          <h4>Founder-Independent</h4>
-          <p>Our delivery doesn't depend on any single person. The system is the product, not the individual.</p>
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">"</div>
+          <blockquote>The owner intelligence dashboard changed everything. I can see what's happening at my salon from my phone. without being there.</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">ER</div>
+            <div>
+              <div class="author-name">Elena R.</div>
+              <div class="author-role">Salon Owner</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
         </div>
       </div>
     </div>
@@ -182,13 +291,22 @@
 
   <!-- CTA -->
   <section class="section section-cta">
+    <div class="cta-bg-effects">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
     <div class="container">
-      <div class="section-label">Get Started</div>
-      <h2 class="cta-title">Start with a free audit.</h2>
-      <p class="cta-desc">We'll map your operations and deliver a blueprint showing exactly where automation fits and what it saves.</p>
-      <div class="cta-actions">
-        <a href="mailto:contact@novamindai.com?subject=Free%20Automation%20Audit" class="btn btn-primary btn-lg">Book Your Free Audit</a>
-        <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+      <div class="cta-content text-center">
+        <div class="section-label">Ready?</div>
+        <h2 class="cta-title">Ready to Automate<br/>Your Operations?</h2>
+        <p class="cta-desc">Book a free operations review. We'll identify your top automation opportunities and show you exactly what NovaMind can do for your business.</p>
+        <div class="cta-actions">
+          <a href="mailto:contact@novamindai.com" class="btn btn-primary btn-glow btn-lg magnetic">
+            <span>Get a Free Operations Review</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="services.html" class="btn btn-glass btn-lg magnetic"><span>View Our Services</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -199,45 +317,56 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             NovaMind
           </a>
-          <p>AI automation infrastructure for service-based businesses.</p>
+          <p>AI automation infrastructure for service businesses. We don't replace your tools. We make them work for you.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4>Platform</h4>
           <ul class="footer-links">
-            <li><a href="industries.html">Industries</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Modules</h4>
+          <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="products.html">Customer Operations</a></li>
-            <li><a href="products.html">Internal Operations</a></li>
-            <li><a href="products.html">Reporting</a></li>
+            <li><a href="services.html">AI Response</a></li>
+            <li><a href="services.html">Workflow Automation</a></li>
+            <li><a href="services.html">Owner Intelligence</a></li>
+            <li><a href="services.html">System Integrations</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <ul class="footer-links">
             <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2025 NovaMind. All rights reserved.</span>
+        <span>&copy; 2026 NovaMind. All rights reserved.</span>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="main.js"></script>
+  <script src="signup.js"></script>
   <script src="chatbot.js"></script>
   <script src="lang.js"></script>
 </body>

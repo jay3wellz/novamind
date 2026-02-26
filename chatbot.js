@@ -1,5 +1,5 @@
 /* ============================================
-   NovaMind — Nova Chatbot Widget
+   NovaMind. Nova Chatbot Widget
    FAQ chatbot with keyword-based responses
    ============================================ */
 (function () {
@@ -8,125 +8,100 @@
   // ---- Knowledge base ----
   const KB = [
     {
-      keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'howdy', 'what\'s up', 'sup'],
-      reply: () => `Hey there! I'm <strong>Nova</strong>, NovaMind's assistant.<br><br>I can help you learn about our products, pricing, plans, and how to get started.<br><br>What would you like to know?`,
-      chips: ['What is NovaMind?', 'Products', 'Pricing', 'Get started'],
+      keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'howdy', 'what\'s up', 'sup', 'bonjour', 'salut', 'allo'],
+      reply: () => `Hey there! I'm <strong>Nova</strong>, NovaMind's assistant.<br><br>I can help you learn about our automation services, pricing, and how we help service businesses scale.<br><br>What would you like to know?`,
+      chips: ['What is NovaMind?', 'Services', 'Pricing', 'Get started'],
     },
     {
-      keys: ['what do you do', 'what is novamind', 'about', 'who are you', 'tell me about', 'what is this'],
-      reply: () => `<strong>NovaMind</strong> is a business platform that gives you powerful tools to run your entire operation.<br><br>We offer <strong>9 products</strong> — CRM, Invoicing, Scheduling, Analytics, Email Marketing, AI Chatbot, Inventory Management, Team Chat, and Project Management.<br><br>Every paid plan includes an <strong>AI Business Agent</strong> that knows everything about your company and works 24/7.`,
-      chips: ['Products', 'Pricing', 'How it works'],
+      keys: ['what do you do', 'what is novamind', 'about', 'who are you', 'tell me about', 'what is this', 'c\'est quoi'],
+      reply: () => `<strong>NovaMind</strong> is an AI automation infrastructure company for service businesses.<br><br>We don't replace your tools. we connect to your existing CRM, POS, calendars, and booking software, then automate <strong>20–40% of your repetitive operations</strong>.<br><br>Our two layers:<br>• <strong>Automation Infrastructure</strong>. AI response, workflow automation, integrations, reporting<br>• <strong>Owner Intelligence</strong>. Anomaly detection, churn alerts, revenue signals<br><br>Your operations run 24/7 on autopilot while you focus on growth.`,
+      chips: ['Services', 'Pricing', 'How it works'],
     },
     {
-      keys: ['product', 'products', 'tools', 'what you offer', 'features', 'services', 'service'],
-      reply: () => `We offer <strong>9 business products</strong>:<br><br>1. <strong>CRM</strong> — Contact management & deal pipeline<br>2. <strong>Invoicing</strong> — Auto-generation & payment tracking<br>3. <strong>Scheduling</strong> — Online booking & calendar sync<br>4. <strong>Analytics</strong> — Revenue tracking & custom reports<br>5. <strong>Email Marketing</strong> — Campaign builder & automation<br>6. <strong>AI Chatbot</strong> — 24/7 customer support<br>7. <strong>Inventory Management</strong> — Stock tracking & alerts<br>8. <strong>Team Chat</strong> — Internal communication<br>9. <strong>Project Management</strong> — Task boards & collaboration<br><br>Each product is <strong>$5/mo</strong> as an add-on. <a href="products.html">See all products →</a>`,
-      chips: ['Pricing & plans', 'AI Agent', 'Get started'],
+      keys: ['product', 'products', 'tools', 'what you offer', 'features', 'services', 'service', 'what can you automate'],
+      reply: () => `We offer two integrated service layers:<br><br><strong>Layer 1. Automation Infrastructure:</strong><br>1. <strong>AI Customer Response</strong>. Chat, SMS, email, voice. 24/7.<br>2. <strong>Workflow Automation</strong>. Intake → scheduling → task routing → follow-ups → billing<br>3. <strong>System Integrations</strong>. CRM, calendars, POS, booking software<br>4. <strong>Automated Reporting</strong>. Daily/weekly digests, anomaly alerts<br><br><strong>Layer 2. Owner Intelligence:</strong><br>5. <strong>Performance Baselines</strong>. Learns "normal", detects deviations<br>6. <strong>Smart Alerts</strong>. Churn risk, revenue signals, operational leaks<br>7. <strong>Owner Visibility</strong>. Mobile-first, 2-min daily check-in<br><br><a href="services.html">See all services →</a>`,
+      chips: ['Pricing', 'How it works', 'Get started'],
     },
     {
-      keys: ['crm', 'contact', 'leads', 'deal', 'pipeline'],
-      reply: () => `Our <strong>CRM</strong> product helps you manage contacts, track deals, and nurture relationships.<br><br>Features include:<br>• Contact management<br>• Deal pipeline tracking<br>• Activity logs<br>• Custom fields<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['ai response', 'customer response', 'chat', 'sms', 'email', 'voice', 'chatbot', 'bot'],
+      reply: () => `Our <strong>AI Customer Response</strong> system handles communications across all channels:<br><br>• Chat, SMS, email, and voice. all automated<br>• Qualifies and routes leads instantly<br>• Responds in seconds, 24/7<br>• Custom-trained on your business data<br>• Reduces missed leads significantly<br><br>This is part of our Automation Infrastructure layer.`,
+      chips: ['Other services', 'Pricing', 'Get started'],
     },
     {
-      keys: ['invoice', 'invoicing', 'billing', 'payment'],
-      reply: () => `Our <strong>Invoicing</strong> product handles billing on autopilot.<br><br>• Auto-generate invoices<br>• Payment tracking<br>• Recurring invoices<br>• Late payment reminders<br>• Stripe integration<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['workflow', 'automation', 'automate', 'process', 'intake', 'routing'],
+      reply: () => `Our <strong>Workflow Automation</strong> maps your full operational flow:<br><br>• Intake → scheduling → task routing<br>• Follow-ups → billing triggers<br>• Eliminates manual handoffs<br>• Custom-designed for your specific business<br>• Works with your existing tools<br><br>No more dropping the ball between steps.`,
+      chips: ['Other services', 'Pricing', 'Get started'],
     },
     {
-      keys: ['schedul', 'booking', 'appointment', 'calendar'],
-      reply: () => `Our <strong>Scheduling</strong> product streamlines appointment booking.<br><br>• Online booking page<br>• Calendar sync<br>• SMS reminders<br>• Rescheduling links<br>• No-show reduction<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['integration', 'connect', 'crm', 'pos', 'calendar', 'booking', 'existing tools'],
+      reply: () => `Our <strong>System Integrations</strong> connect to what you already use:<br><br>• CRM systems<br>• POS and payment platforms<br>• Calendars and booking software<br>• Accounting tools<br>• Communication platforms<br><br>We don't replace your tools. we make them talk to each other and work on autopilot.`,
+      chips: ['Other services', 'Pricing', 'How it works'],
     },
     {
-      keys: ['analytic', 'dashboard', 'report', 'data', 'insight'],
-      reply: () => `Our <strong>Analytics</strong> product gives you real-time business insights.<br><br>• Revenue tracking<br>• Customer analytics<br>• Custom reports<br>• Goal tracking<br>• Performance dashboards<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['report', 'reporting', 'dashboard', 'analytic', 'data', 'insight', 'digest'],
+      reply: () => `Our <strong>Automated Reporting & Escalation</strong> keeps you informed without the noise:<br><br>• Daily/weekly performance digests<br>• Anomaly detection alerts<br>• Escalation logic for critical issues<br>• Revenue and efficiency tracking<br><br>See what matters in under 2 minutes per day.`,
+      chips: ['Owner Intelligence', 'Pricing', 'Get started'],
     },
     {
-      keys: ['email', 'marketing', 'campaign', 'newsletter'],
-      reply: () => `Our <strong>Email Marketing</strong> product helps you engage your audience at scale.<br><br>• Drag-and-drop campaign builder<br>• Automation flows<br>• A/B testing<br>• Audience segmentation<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['owner intelligence', 'anomaly', 'alert', 'churn', 'detection', 'baseline'],
+      reply: () => `<strong>Owner Intelligence</strong> is our second service layer. built for business owners:<br><br>• <strong>Performance Baselines</strong>. AI learns what "normal" looks like, spots deviations early<br>• <strong>Smart Alerts</strong>. Churn risk, operational leaks, revenue signals<br>• <strong>Owner Visibility</strong>. Mobile-first, 2-minute daily check-in<br><br>Know what's happening in your business from anywhere, without being physically present.`,
+      chips: ['Automation layer', 'Pricing', 'Get started'],
     },
     {
-      keys: ['chatbot', 'ai chatbot', 'chat', 'bot', 'customer support'],
-      reply: () => `Our <strong>AI Chatbot</strong> product provides 24/7 intelligent customer support for your business.<br><br>• Natural language AI<br>• Lead qualification<br>• Appointment booking<br>• Custom training on your data<br>• Reduces support volume significantly<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['AI Agent', 'Other products', 'Get started'],
+      keys: ['plan', 'plans', 'pricing', 'price', 'cost', 'how much', 'rates', 'fee', 'affordable', 'combien', 'prix', 'tarif'],
+      reply: () => `Here's our <strong>pricing</strong>:<br><br><strong>Setup Packages (One-Time):</strong><br>• Entry. Starting at $2,000<br>• Standard. Starting at $3,500<br>• Enterprise. Starting at $5,000+<br><br><strong>Monthly Subscriptions:</strong><br>• Base. Starting at $500/mo<br>• Growth. Starting at $800/mo (Most Popular)<br>• Scale. Starting at $1,200/mo<br><br>Add-on modules available: AI Voice, AI Chat, CRM Integration, Advanced Reporting, and more.<br><br><a href="pricing.html">See full pricing →</a>`,
+      chips: ['What\'s included?', 'ROI', 'Get started'],
     },
     {
-      keys: ['inventory', 'stock', 'supplier', 'warehouse'],
-      reply: () => `Our <strong>Inventory Management</strong> product keeps your stock in check.<br><br>• Real-time stock tracking<br>• Low-stock alerts<br>• Supplier management<br>• Barcode scanning<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['entry', 'base', 'starter', 'small business', 'basic'],
+      reply: () => `The <strong>Entry</strong> package is perfect for getting started:<br><br><strong>Setup:</strong> Starting at $2,000 (one-time)<br><strong>Monthly:</strong> Starting at $500/mo<br><br>Includes:<br>• 3–5 core automations<br>• Basic integration setup<br>• Monthly reporting<br>• Email support<br><br>Most clients see ROI within 90 days.`,
+      chips: ['Growth tier', 'Scale tier', 'Get started'],
     },
     {
-      keys: ['team chat', 'internal', 'communication', 'message', 'slack'],
-      reply: () => `Our <strong>Team Chat</strong> product is built for fast internal communication.<br><br>• Channels & direct messages<br>• File sharing<br>• Threaded replies<br>• @mentions & notifications<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['growth', 'standard', 'popular', 'mid'],
+      reply: () => `The <strong>Growth</strong> package is our most popular:<br><br><strong>Setup:</strong> Starting at $3,500 (one-time)<br><strong>Monthly:</strong> Starting at $800/mo<br><br>Includes:<br>• Multi-workflow implementation<br>• 2–3 system integrations<br>• Priority support<br>• Quarterly performance reviews<br><br>Best value for businesses ready to scale operations.`,
+      chips: ['Entry tier', 'Scale tier', 'Get started'],
     },
     {
-      keys: ['project', 'task', 'kanban', 'board', 'collaboration'],
-      reply: () => `Our <strong>Project Management</strong> product keeps your team aligned.<br><br>• Kanban boards<br>• Task assignments<br>• Due dates & deadlines<br>• Progress tracking<br><br>Included in your plan or available as a <strong>$5/mo add-on</strong>.`,
-      chips: ['Other products', 'Pricing', 'Get started'],
+      keys: ['scale', 'enterprise', 'full', 'custom', 'large'],
+      reply: () => `The <strong>Scale</strong> package is for full infrastructure deployment:<br><br><strong>Setup:</strong> Starting at $5,000+ (one-time)<br><strong>Monthly:</strong> Starting at $1,200/mo<br><br>Includes:<br>• Full automation suite<br>• Custom alert configuration<br>• Dedicated optimization specialist<br>• Cross-department deployment<br><br>Contact us at <a href="mailto:contact@novamindai.com">contact@novamindai.com</a> for a custom quote.`,
+      chips: ['Other tiers', 'Services', 'Contact'],
     },
     {
-      keys: ['plan', 'plans', 'pricing', 'price', 'cost', 'how much', 'rates', 'fee', 'affordable', 'cheap', 'expensive'],
-      reply: () => `Here's our <strong>pricing</strong>:<br><br><strong>Free</strong> — $0/mo<br>1 product included, no AI agent<br><br><strong>Start Up</strong> — $29/mo<br>3 products + AI Business Agent<br><br><strong>Max</strong> — $79/mo (Most Popular)<br>5 products + AI Business Agent<br><br><strong>Custom</strong> — Contact us<br>Custom product selection + AI agent<br><br>Additional products: <strong>$5/mo each</strong><br><br><a href="pricing.html">See full pricing →</a>`,
-      chips: ['What\'s included?', 'AI Agent', 'Get started'],
+      keys: ['roi', 'return', 'worth it', 'results', 'outcome', 'save'],
+      reply: () => `Our clients typically see <strong>measurable ROI within 90 days</strong>:<br><br>• <strong>20–40% of daily operations automated</strong><br>• Faster lead response (seconds, not hours)<br>• Hours saved per week on manual tasks<br>• Reduced missed opportunities & churn<br>• Improved profit margins through efficiency<br><br>Every engagement is designed to pay for itself.`,
+      chips: ['Pricing', 'How it works', 'Get started'],
     },
     {
-      keys: ['free', 'free plan', 'no cost', 'trial'],
-      reply: () => `Our <strong>Free plan</strong> includes:<br><br>• 1 product of your choice<br>• Full access to that product<br>• No credit card required<br>• No time limit<br><br>You can upgrade to a paid plan anytime to unlock more products and the AI Business Agent.`,
-      chips: ['Upgrade options', 'All products', 'Get started'],
+      keys: ['how it works', 'process', 'steps', 'how does it work', 'what happens', 'deployment', 'comment ça marche'],
+      reply: () => `Our deployment follows a <strong>structured 6-step process</strong>:<br><br>1. <strong>Discovery</strong>. Deep-dive into your tools, workflows, and pain points<br>2. <strong>Architecture</strong>. Design your automation blueprint<br>3. <strong>Build & Integrate</strong>. Build automations, connect to your tools<br>4. <strong>Test & QA</strong>. Full testing with real data<br>5. <strong>Go-Live & Train</strong>. Deploy and train your team<br>6. <strong>Optimize & Expand</strong>. Review, optimize, and grow<br><br><a href="how-it-works.html">Learn more →</a>`,
+      chips: ['Pricing', 'Services', 'Get started'],
     },
     {
-      keys: ['startup', 'start up', 'start-up'],
-      reply: () => `The <strong>Start Up plan</strong> is $29/mo and includes:<br><br>• 3 products of your choice<br>• AI Business Agent<br>• Priority support<br>• All platform updates<br><br>Need more products? Add any for $5/mo each.`,
-      chips: ['Max plan', 'All products', 'Get started'],
-    },
-    {
-      keys: ['max', 'max plan', 'popular'],
-      reply: () => `The <strong>Max plan</strong> is our most popular at $79/mo:<br><br>• 5 products of your choice<br>• AI Business Agent<br>• Priority support<br>• All platform updates<br>• Best value per product<br><br>Need more? Add any product for $5/mo each.`,
-      chips: ['Custom plan', 'All products', 'Get started'],
-    },
-    {
-      keys: ['custom', 'enterprise', 'tailored', 'custom plan'],
-      reply: () => `Our <strong>Custom plan</strong> is built for larger businesses:<br><br>• Custom product selection<br>• AI Business Agent<br>• Dedicated support<br>• Custom integrations<br>• Volume pricing<br><br>Contact us at <a href="mailto:contact@novamindai.com">contact@novamindai.com</a> to discuss your needs.`,
-      chips: ['Other plans', 'Products', 'Contact'],
-    },
-    {
-      keys: ['ai agent', 'ai business', 'artificial intelligence', 'agent'],
-      reply: () => `The <strong>AI Business Agent</strong> is included in every paid plan.<br><br>It's an intelligent assistant that:<br>• Knows everything about your company<br>• Answers business questions instantly<br>• Helps with decision-making<br>• Works 24/7, no breaks<br>• Learns from your data<br><br>It's like having a business analyst on staff around the clock.`,
-      chips: ['Plans & pricing', 'Products', 'Get started'],
-    },
-    {
-      keys: ['add-on', 'addon', 'extra', 'additional', '$5'],
-      reply: () => `Need more products beyond what your plan includes? <strong>Add any product for just $5/mo each</strong>.<br><br>This applies to all plans. For example, on the Start Up plan (3 products included), you can add a 4th product for $5/mo, a 5th for another $5/mo, and so on.<br><br>New products are released regularly and automatically available in your account.`,
-      chips: ['All products', 'Plans & pricing', 'Get started'],
-    },
-    {
-      keys: ['how it works', 'process', 'steps', 'how does it work', 'what happens'],
-      reply: () => `Getting started with NovaMind takes <strong>under 60 seconds</strong>:<br><br><strong>1. Create Your Account</strong><br>Email, password, business name. That's it.<br><br><strong>2. Select Your Plan</strong><br>Free, Start Up, Max, or Custom.<br><br><strong>3. Select Products & Grow</strong><br>Pick the tools your business needs. Add more anytime for $5/mo each.<br><br><a href="how-it-works.html">Learn more →</a>`,
-      chips: ['Create account', 'Plans & pricing', 'Products'],
-    },
-    {
-      keys: ['get started', 'start', 'sign up', 'begin', 'ready', 'next step', 'create account', 'register'],
-      reply: () => `Getting started is simple and <strong>completely free</strong>:<br><br>1. Click <strong>"Start Building"</strong> in the top navigation<br>2. Enter your email, password, and business name<br>3. Choose your plan (start free!)<br>4. Select your products and you're ready to go<br><br>No credit card required for the free plan. Takes under 60 seconds.`,
-      chips: ['Pricing', 'Products', 'How it works'],
+      keys: ['get started', 'start', 'sign up', 'begin', 'ready', 'next step', 'register', 'commencer', 'démarrer'],
+      reply: () => `Getting started is easy:<br><br>1. <strong>Book a Free Operations Review</strong>. We analyze your current workflows<br>2. We identify your top automation opportunities<br>3. We present a custom automation plan<br>4. You decide if you want to move forward<br><br>No commitment required. The review alone gives you valuable insights.<br><br>Click <strong>"Free Operations Review"</strong> in the navigation to get started.`,
+      chips: ['Pricing', 'Services', 'How it works'],
     },
     {
       keys: ['contact', 'email', 'phone', 'reach', 'talk to', 'speak', 'support'],
-      reply: () => `You can reach us at:<br><br><strong>Email:</strong> contact@novamindai.com<br><strong>Response time:</strong> Within 24 hours<br><br>For existing customers on paid plans, priority support is available directly through the platform.`,
-      chips: ['Plans & pricing', 'How it works'],
+      reply: () => `You can reach us at:<br><br><strong>Email:</strong> contact@novamindai.com<br><strong>Response time:</strong> Within 24 hours<br><br>Or book a <strong>Free Operations Review</strong> directly from our website. it's the fastest way to see what NovaMind can do for your business.`,
+      chips: ['Pricing', 'How it works'],
     },
     {
-      keys: ['new product', 'update', 'release', 'coming soon', 'roadmap'],
-      reply: () => `We regularly release <strong>new products</strong> and updates.<br><br>When a new product launches, it's automatically available in your account. You can activate it as one of your included products or add it for $5/mo.<br><br>All existing products also receive continuous improvements and new features at no extra cost.`,
-      chips: ['Current products', 'Pricing', 'Get started'],
+      keys: ['industry', 'industries', 'restaurant', 'garage', 'gym', 'clinic', 'real estate', 'construction', 'law'],
+      reply: () => `We serve <strong>8+ industries</strong> with specialized automation playbooks:<br><br>• Restaurants<br>• Auto repair garages<br>• Gyms & fitness studios<br>• Real estate agencies<br>• Law firms<br>• Construction companies<br>• Import/export<br>• And more<br><br>Each industry gets a custom automation blueprint tailored to its specific workflows.<br><br><a href="industries.html">See industry solutions →</a>`,
+      chips: ['Services', 'Pricing', 'Get started'],
+    },
+    {
+      keys: ['replace', 'switch', 'change tools', 'new software'],
+      reply: () => `<strong>No. we don't replace your tools.</strong><br><br>That's our core principle. We connect to your existing CRM, POS, calendars, booking software, and other systems.<br><br>We automate the manual work your people do <em>around</em> those tools. without asking you to switch anything.`,
+      chips: ['How it works', 'Services', 'Pricing'],
     },
   ];
 
   const FALLBACK = {
-    reply: () => `I'm not sure I caught that — still learning!<br><br>Here's what I <em>can</em> help with:<br>• Our products & features<br>• Plans & pricing<br>• How to get started<br>• AI Business Agent<br><br>Or email us at <a href="mailto:contact@novamindai.com">contact@novamindai.com</a> for anything specific.`,
-    chips: ['Products', 'Pricing', 'How it works', 'Get started'],
+    reply: () => `I'm not sure I caught that. still learning!<br><br>Here's what I <em>can</em> help with:<br>• Our automation services<br>• Pricing & packages<br>• How deployment works<br>• Industries we serve<br><br>Or email us at <a href="mailto:contact@novamindai.com">contact@novamindai.com</a> for anything specific.`,
+    chips: ['Services', 'Pricing', 'How it works', 'Get started'],
   };
 
   // ---- Match input to knowledge base ----
@@ -144,7 +119,6 @@
       <!-- Chatbot toggle button -->
       <button class="chatbot-toggle" id="cbToggle" aria-label="Open chat">
         <i data-lucide="message-circle"></i>
-        <span class="badge">1</span>
       </button>
 
       <!-- Chatbot window -->
@@ -257,10 +231,6 @@
     const input = document.getElementById('cbInput');
     if (input) input.value = '';
 
-    // Remove badge on first message
-    const badge = document.querySelector('.chatbot-toggle .badge');
-    if (badge) badge.remove();
-
     showTyping();
     const match = findAnswer(text);
     setTimeout(() => {
@@ -274,17 +244,13 @@
     const win = document.getElementById('cbWindow');
     if (win) {
       win.classList.add('open');
-      sessionStorage.setItem('cbOpen', '1');
     }
-    const badge = document.querySelector('.chatbot-toggle .badge');
-    if (badge) badge.remove();
     setTimeout(() => { document.getElementById('cbInput')?.focus(); }, 350);
   }
 
   function closeChat() {
     const win = document.getElementById('cbWindow');
     if (win) win.classList.remove('open');
-    sessionStorage.removeItem('cbOpen');
   }
 
   // ---- Init ----
@@ -295,7 +261,14 @@
     if (window.lucide) window.lucide.createIcons();
 
     // Wire buttons
-    document.getElementById('cbToggle')?.addEventListener('click', openChat);
+    document.getElementById('cbToggle')?.addEventListener('click', () => {
+      const win = document.getElementById('cbWindow');
+      if (win && win.classList.contains('open')) {
+        closeChat();
+      } else {
+        openChat();
+      }
+    });
     document.getElementById('cbClose')?.addEventListener('click', closeChat);
 
     document.getElementById('cbSend')?.addEventListener('click', () => {
@@ -315,13 +288,10 @@
     // Welcome message after slight delay
     setTimeout(() => {
       addMessage('bot',
-        `Hi! I'm <strong>Nova</strong>, NovaMind's assistant.<br><br>I can answer questions about our products, pricing, and how to get your business running on NovaMind. What would you like to know?`,
-        ['Products', 'Pricing', 'How it works', 'Get started']
+        `Hi! I'm <strong>Nova</strong>, NovaMind's assistant.<br><br>I can answer questions about our automation services, pricing, and how we help service businesses scale. What would you like to know?`,
+        ['Services', 'Pricing', 'How it works', 'Get started']
       );
     }, 800);
-
-    // Restore open state
-    if (sessionStorage.getItem('cbOpen') === '1') openChat();
   }
 
   // Wait for DOM

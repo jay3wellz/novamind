@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service. NovaMind | AI Automation Infrastructure</title>
+  <meta name="description" content="NovaMind Terms of Service. Read the terms and conditions governing the use of our AI automation infrastructure services." />
+  <meta property="og:title" content="Terms of Service. NovaMind" />
+  <meta property="og:description" content="Terms and conditions governing the use of NovaMind's AI automation services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://novamindai.com/terms" />
+  <meta property="og:image" content="https://novamindai.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms of Service. NovaMind" />
+  <meta name="twitter:description" content="Terms and conditions for NovaMind AI automation services." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+  <div class="starfield">
+    <div class="starfield-layer starfield-layer-1"></div>
+    <div class="starfield-layer starfield-layer-2"></div>
+    <div class="starfield-layer starfield-layer-3"></div>
+  </div>
+  <div class="scroll-rocket" id="scrollRocket">
+    <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C12 2 7 8 7 14C7 17 9.24 19.5 12 20C14.76 19.5 17 17 17 14C17 8 12 2 12 2Z" fill="url(#rocketGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+      <circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.9)"/>
+      <path d="M9 20L12 26L15 20" fill="url(#flameGrad)" opacity="0.9"><animate attributeName="d" values="M9 20L12 26L15 20;M9.5 20L12 28L14.5 20;M9 20L12 26L15 20" dur="0.4s" repeatCount="indefinite"/></path>
+      <path d="M10 20L12 24L14 20" fill="rgba(255,255,255,0.4)"><animate attributeName="d" values="M10 20L12 24L14 20;M10.5 20L12 27L13.5 20;M10 20L12 24L14 20" dur="0.3s" repeatCount="indefinite"/></path>
+      <defs>
+        <linearGradient id="rocketGrad" x1="12" y1="2" x2="12" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#888888"/></linearGradient>
+        <linearGradient id="flameGrad" x1="12" y1="20" x2="12" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#888888"/><stop offset="0.5" stop-color="#cccccc"/><stop offset="1" stop-color="#555555" stop-opacity="0"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="rocket-trail" id="rocketTrail"><div class="rocket-trail-inner"></div></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" onclick="closeMobileMenu()">&#10005;</span>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="industries.html" onclick="closeMobileMenu()">Industries</a>
+    <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
+    <a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a>
+  </nav>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        NovaMind
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+      </ul>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">EN</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button onclick="setLang('en')">English</button>
+          <button onclick="setLang('fr')">Fran&ccedil;ais</button>
+        </div>
+      </div>
+      <a href="mailto:contact@novamindai.com" class="btn btn-primary nav-cta magnetic">
+        <span>Free Operations Review</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Legal</div>
+      <h1>Terms of <span class="gradient-text">Service</span></h1>
+      <p class="privacy-effective">Effective Date: February 25, 2026</p>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="section">
+    <div class="container legal-accordion">
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">1. Acceptance of Terms</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>By accessing or using the NovaMind website (novamindai.com) and services, you agree to be bound by these Terms of Service ("Terms"). If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind that entity. If you do not agree to these Terms, do not use our services.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">2. Description of Services</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>NovaMind provides AI automation infrastructure services for service businesses. Our services include, but are not limited to:</p>
+          <p><strong>AI Customer Response Systems:</strong> Automated handling of chat, SMS, email, and voice communications on behalf of your business.</p>
+          <p><strong>Workflow Automation:</strong> Design and implementation of automated operational workflows including intake, scheduling, task routing, follow-ups, and billing triggers.</p>
+          <p><strong>System Integrations:</strong> Connecting your existing business tools (CRM, POS, calendars, booking software, accounting) to our automation infrastructure.</p>
+          <p><strong>Owner Intelligence:</strong> Performance baselines, anomaly detection, churn risk alerts, revenue signals, and automated reporting.</p>
+          <p>The specific scope of services for each client is defined in the individual service agreement established during the onboarding process.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">3. Account and Access</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>Certain features of our services may require you to provide access credentials to your existing business tools. You are responsible for:</p>
+          <p>Providing accurate and complete information during onboarding. Maintaining the security of your account credentials. Notifying us immediately of any unauthorized access. Ensuring that authorized personnel within your organization use the services in accordance with these Terms.</p>
+          <p>We reserve the right to suspend or terminate access if we reasonably believe your account is being used in violation of these Terms.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">4. Service Agreements and Onboarding</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>Each NovaMind engagement begins with a discovery phase where we assess your operations and design a custom automation blueprint. The specifics of your automation infrastructure, including scope, timeline, and deliverables, are documented in a separate service agreement.</p>
+          <p>The service agreement, together with these Terms, constitutes the complete agreement between you and NovaMind. In the event of a conflict between these Terms and your service agreement, the service agreement shall prevail.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">5. Payment Terms</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p><strong>Setup Fees:</strong> One-time setup fees are due upon signing the service agreement. Setup fees cover the discovery, architecture, build, testing, and deployment phases of your automation infrastructure.</p>
+          <p><strong>Monthly Subscriptions:</strong> Recurring monthly fees begin on the go-live date and are billed on the first of each month. Monthly fees cover ongoing automation operation, monitoring, support, and optimization.</p>
+          <p><strong>Add-On Modules:</strong> Additional modules (AI Voice, AI Chat, Advanced Reporting, etc.) may be added to your subscription at any time and will be billed at the rates specified in your service agreement.</p>
+          <p><strong>Late Payments:</strong> Payments not received within 15 days of the due date may result in temporary suspension of services. We will provide at least 7 days written notice before any suspension.</p>
+          <p><strong>Taxes:</strong> All fees are exclusive of applicable taxes. You are responsible for all taxes associated with your use of the services.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">6. Intellectual Property</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p><strong>NovaMind Property:</strong> All content on our website, including text, graphics, logos, software, and documentation, is owned by NovaMind or its licensors and is protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our prior written consent.</p>
+          <p><strong>Automation Infrastructure:</strong> The automation workflows, integration logic, and system architecture we build for you are licensed for your use under your active subscription. The underlying technology, frameworks, and playbooks remain the intellectual property of NovaMind.</p>
+          <p><strong>Your Data:</strong> You retain full ownership of all business data processed through our automation infrastructure. We claim no ownership over your customer data, operational data, or business records.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">7. Acceptable Use</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>You agree not to use our services to:</p>
+          <p>Violate any applicable laws, regulations, or third-party rights. Send spam, unsolicited communications, or misleading messages through our automated systems. Interfere with or disrupt the integrity or performance of our services. Attempt to gain unauthorized access to our systems or other clients' data. Use our services for any illegal, fraudulent, or harmful purpose. Reverse-engineer, decompile, or attempt to extract the source code of our technology.</p>
+          <p>Violation of these terms may result in immediate suspension or termination of services.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">8. Service Levels and Availability</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>We strive to maintain high availability for all automation services. Specific uptime commitments and support response times are detailed in your individual service agreement.</p>
+          <p>We may temporarily suspend services for scheduled maintenance, security updates, or circumstances beyond our reasonable control. We will provide advance notice of planned maintenance whenever possible.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">9. Confidentiality</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>Both parties agree to maintain the confidentiality of proprietary information shared during the engagement. This includes business processes, customer data, pricing, automation blueprints, and any other information marked as confidential or that would reasonably be understood to be confidential.</p>
+          <p>This obligation survives the termination of the service agreement for a period of 2 years, except for trade secrets which shall remain confidential indefinitely.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">10. Limitation of Liability</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>To the maximum extent permitted by law, NovaMind shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, business opportunities, or goodwill, arising out of or in connection with your use of our services.</p>
+          <p>Our total aggregate liability for any claim arising from these Terms or your use of the services shall not exceed the total fees paid by you to NovaMind in the 12 months preceding the claim.</p>
+          <p>This limitation applies regardless of the theory of liability (contract, tort, strict liability, or otherwise) and even if NovaMind has been advised of the possibility of such damages.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">11. Disclaimer of Warranties</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+          <p>While we strive to deliver measurable ROI and operational improvements, we do not guarantee specific business outcomes, revenue increases, or cost savings. Results vary depending on your industry, existing operations, and implementation scope.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">12. Termination</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p><strong>By You:</strong> You may terminate your subscription by providing 30 days written notice. Setup fees are non-refundable. Monthly fees are prorated to the termination date.</p>
+          <p><strong>By NovaMind:</strong> We may terminate or suspend your services immediately if you breach these Terms, fail to make payments after notice, or use the services in a way that could harm other clients or our infrastructure.</p>
+          <p><strong>Effect of Termination:</strong> Upon termination, we will provide you with a copy of your operational data in a standard format within 30 days of your request. Access to automations and integrations will be deactivated. Your data will be retained for 90 days after termination to allow for reactivation, after which it will be permanently deleted.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">13. Indemnification</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>You agree to indemnify, defend, and hold harmless NovaMind, its officers, directors, employees, and agents from any claims, liabilities, damages, losses, or expenses (including reasonable legal fees) arising out of or in connection with your violation of these Terms, your misuse of the services, or your violation of any third-party rights.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">14. Governing Law</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>These Terms shall be governed by and construed in accordance with the laws of the Province of Quebec and the federal laws of Canada applicable therein, without regard to conflict of law principles. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts located in Montreal, Quebec.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">15. Changes to These Terms</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>We reserve the right to modify these Terms at any time. When we make changes, we will update the "Effective Date" at the top of this page. For material changes, we will provide at least 30 days notice via email or a prominent notice on our website.</p>
+          <p>Your continued use of our services after the effective date of revised Terms constitutes your acceptance of those changes.</p>
+        </div>
+      </div>
+
+      <div class="legal-item">
+        <div class="legal-trigger" onclick="toggleLegal(this)">
+          <h3 class="privacy-heading">16. Contact Us</h3>
+          <svg class="legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="legal-body">
+          <p>If you have any questions about these Terms of Service, please contact us:</p>
+          <p><strong>NovaMind</strong></p>
+          <p>Email: <a href="mailto:contact@novamindai.com">contact@novamindai.com</a></p>
+          <p>Website: <a href="https://novamindai.com">novamindai.com</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+  function toggleLegal(trigger) {
+    var item = trigger.parentElement;
+    var wasActive = item.classList.contains('active');
+    item.classList.toggle('active');
+    if (!wasActive) {
+      var body = item.querySelector('.legal-body');
+      if (body) body.scrollHeight;
+    }
+  }
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            NovaMind
+          </a>
+          <p>AI automation infrastructure for service businesses. We don't replace your tools. We make them work for you.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">AI Response</a></li>
+            <li><a href="services.html">Workflow Automation</a></li>
+            <li><a href="services.html">Owner Intelligence</a></li>
+            <li><a href="services.html">System Integrations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@novamindai.com">contact@novamindai.com</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 NovaMind. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="signup.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="lang.js"></script>
+</body>
+</html>
